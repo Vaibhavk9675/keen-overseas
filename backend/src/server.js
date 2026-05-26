@@ -16,7 +16,12 @@ const app = express();
 // DB connect MUST happen first
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://YOUR-VERCEL-APP.vercel.app",
+    methods: ["GET", "POST"],
+  })
+);
 app.use(express.json());
 
 app.use("/api", contactRoutes);
