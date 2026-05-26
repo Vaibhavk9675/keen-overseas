@@ -18,7 +18,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "https://YOUR-VERCEL-APP.vercel.app",
+    origin: "https://keen-overseas.vercel.app",
     methods: ["GET", "POST"],
   })
 );
