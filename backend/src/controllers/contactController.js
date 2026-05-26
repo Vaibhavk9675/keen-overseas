@@ -28,12 +28,16 @@ export const submitContactForm = async (
     // Save to database
     await newContact.save();
 
-    await transporter.sendMail({
+    res.status(201).json({
+      success: true,
+      message: "Form submitted successfully",
+    });
+
+    // Send email AFTER response
+    transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-
       subject: "New Contact Form Submission",
-
       html: `
     <h2>New Contact Form Submission</h2>
 
