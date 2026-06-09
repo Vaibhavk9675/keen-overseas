@@ -2,7 +2,7 @@ import {
   FaPassport,
   FaGraduationCap,
   FaPlaneDeparture,
-  FaFileAlt,
+  FaUsers,
 } from "react-icons/fa";
 
 const servicesData = [
@@ -17,9 +17,9 @@ const servicesData = [
   {
     id: 2,
     icon: FaPassport,
-    title: "PR & Immigration",
+    title: "Job Seeker Visa",
     description:
-      "Professional assistance for permanent residency and immigration applications.",
+      "A trusted provider of work visa services, offering personalized solutions and expert guidance",
   },
 
   {
@@ -32,10 +32,10 @@ const servicesData = [
 
   {
     id: 4,
-    icon: FaFileAlt,
-    title: "Documentation Support",
+    icon: FaUsers,
+    title: "Family Visa",
     description:
-      "Help with SOPs, application forms, and essential visa documentation.",
+      "We provide reliable family visa services, helping families reunite and stay together.",
   },
 ];
 
