@@ -10,63 +10,222 @@ import CountryCard from "../components/CountryCard/CountryCard";
 import testimonialsData from "../data/testimonialsData";
 import TestimonialCard from "../components/TestimonialCard/TestimonialCard";
 
-import heroTravelImg from "../assets/images/hero.webp";
+import hero1 from "../assets/images/hero1.jpg";
+import hero2 from "../assets/images/hero2.jpg";
+import hero3 from "../assets/images/hero3.jpg";
+import hero4 from "../assets/images/hero4.jpg";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, EffectFade, } from "swiper/modules";
+
+import "swiper/css/effect-fade";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Home = () => {
   return (
     <>
 
       {/* Hero Section */}
-      <section className="relative bg-slate-100 overflow-hidden min-h-screen flex items-center">
-
+      <section className="relative bg-slate-100 overflow-hidden md:min-h-screen md:flex md:items-center">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-yellow-50 opacity-80"></div>
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12 md:pt-24 md:pb-16 grid md:grid-cols-2 gap-14 items-center">
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-12 md:pt-24 md:pb-16 grid grid-cols-1 lg:grid-cols-2 gap-9 items-center">
 
           {/* Left Content */}
           <motion.div
+            className="order-1"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
 
             <span className="bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full text-sm font-medium">
-              Trusted Immigration Guidance
+              Trusted Immigration Guidance.
             </span>
 
-            <h1 className="mt-6 text-5xl md:text-6xl font-bold leading-tight text-slate-900">
-              Start Your Journey To Study & Work Abroad
+            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
+              Your Gateway To Global Education & Immigration Success.
             </h1>
 
-            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              Keen Overseas helps students and professionals achieve their global dreams with expert visa consultation, documentation support, and immigration services.
+            <div className="hidden lg:block">
+              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+                Keen Overseas provides expert guidance for university admissions, visa assistance, scholarships, and immigration services to help you achieve your international dreams.
+              </p>
+
+              <div className="mt-8 grid grid-cols-2 gap-3 text-slate-700">
+                <p>✓ Free Counseling</p>
+                <p>✓ Visa Assistance</p>
+                <p>✓ Scholarship Guidance</p>
+                <p>✓ End-to-End Support</p>
+              </div>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-5">
+
+                <Link
+                  to="/contact"
+                  className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-xl transition duration-300 shadow-md"
+                >
+                  Get Consultation
+                </Link>
+
+                <Link
+                  to="/services"
+                  className="border border-slate-300 hover:border-slate-500 text-slate-700 px-6 py-3 rounded-xl transition duration-300"
+                >
+                  Explore Services
+                </Link>
+
+              </div>
+
+              <div className="mt-10 grid grid-cols-2 sm:grid-cols-2  gap-6">
+                <div>
+                  <h2 className="text-3xl font-bold text-slate-900">
+                    500+
+                  </h2>
+                  <p className="text-slate-500 text-sm">
+                    Successful Applications
+                  </p>
+                </div>
+
+                <div>
+                  <h2 className="text-3xl font-bold text-slate-900">
+                    14+
+                  </h2>
+                  <p className="text-slate-500 text-sm">
+                    Years Experience in Study Visas
+                  </p>
+                </div>
+
+                <div>
+                  <h2 className="text-3xl font-bold text-slate-900">
+                   98%
+                  </h2>
+                  <p className="text-slate-500 text-sm">
+                   Visa Success Rate
+                  </p>
+                </div>
+
+                <div>
+                  <h2 className="text-3xl font-bold text-slate-900">
+                    1000+
+                  </h2>
+
+                  <p className="text-slate-500 text-sm">
+                    Students Selected
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+
+          {/* Right Carousel */}
+          <motion.div
+            className="relative w-full order-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <Swiper
+              modules={[Autoplay, Pagination, EffectFade,]}
+              effect="fade"
+              speed={800}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              loop={true}
+              className="rounded-3xl shadow-2xl overflow-hidden"
+            >
+              {[
+                {
+                  image: hero1,
+                  title: "Study at Top Global Universities",
+                },
+                {
+                  image: hero2,
+                  title: "Turn Your Global Dreams Into Reality",
+                },
+                {
+                  image: hero3,
+                  title: "Personalized Guidance at Every Step",
+                },
+                {
+                  image: hero4,
+                  title: "Explore Opportunities Worldwide",
+                },
+              ].map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className=" w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
+                    />
+
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-black/30 flex items-end">
+                      <div className="p-4 sm:p-6 md:p-8 text-white">
+                        <h3
+                          className=" text-lg sm:text-2xl md:text-3xl font-bold leading-tight">
+                          {slide.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
+
+          {/* ADD MOBILE CONTENT HERE */}
+          <div className="lg:hidden order-3 mt-5">
+
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Keen Overseas provides expert guidance for university admissions,
+              visa assistance, scholarships, and immigration services to help
+              you achieve your international dreams.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 grid grid-cols-2 gap-3 text-slate-700">
+              <p>✓ Free Counseling</p>
+              <p>✓ Visa Assistance</p>
+              <p>✓ Scholarship Guidance</p>
+              <p>✓ End-to-End Support</p>
+            </div>
+
+            <div className="mt-6 flex flex-col gap-4">
 
               <Link
                 to="/contact"
-                className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-xl transition duration-300 shadow-md"
+                className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-xl transition duration-300 shadow-md text-center"
               >
                 Get Consultation
               </Link>
 
               <Link
                 to="/services"
-                className="border border-slate-300 hover:border-slate-500 text-slate-700 px-6 py-3 rounded-xl transition duration-300"
+                className="border border-slate-300 hover:border-slate-500 text-slate-700 px-6 py-3 rounded-xl transition duration-300 text-center"
               >
                 Explore Services
               </Link>
 
             </div>
 
-            <div className="mt-10 flex gap-10 flex-wrap">
+            <div className="mt-8 grid grid-cols-2 gap-6">
 
               <div>
                 <h2 className="text-3xl font-bold text-slate-900">
                   500+
                 </h2>
+
                 <p className="text-slate-500 text-sm">
                   Successful Applications
                 </p>
@@ -76,46 +235,36 @@ const Home = () => {
                 <h2 className="text-3xl font-bold text-slate-900">
                   14+
                 </h2>
+
                 <p className="text-slate-500 text-sm">
-                  Years Experience in Study Visas
+                  Years Experience
                 </p>
               </div>
 
               <div>
                 <h2 className="text-3xl font-bold text-slate-900">
-                  83%
+                  98%
                 </h2>
+
                 <p className="text-slate-500 text-sm">
                   Visa Success Rate
                 </p>
               </div>
+
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900">
+                  1000+
+                </h2>
+
+                <p className="text-slate-500 text-sm">
+                  Students Selected
+                </p>
+              </div>
+
             </div>
-          </motion.div>
 
-          {/* Right Image */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          </div>
 
-            <img
-              src={heroTravelImg}
-              alt="Travel"
-              className="rounded-3xl shadow-2xl object-cover h-[600px] w-full"
-            />
-
-            <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md shadow-lg rounded-2xl px-5 py-4">
-              <p className="text-sm text-slate-500">
-                Countries Available
-              </p>
-
-              <h3 className="text-xl font-bold text-slate-900">
-                Canada • UK • Australia
-              </h3>
-            </div>
-          </motion.div>
         </div>
       </section >
 
@@ -266,8 +415,8 @@ const Home = () => {
           <div className="mt-10 flex flex-wrap justify-center gap-5">
 
             <Link
-            to= "/contact"
-            className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-4 rounded-2xl transition duration-300 shadow-lg">
+              to="/contact"
+              className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-4 rounded-2xl transition duration-300 shadow-lg">
               Book Consultation
             </Link>
 
