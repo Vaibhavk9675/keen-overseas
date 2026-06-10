@@ -12,6 +12,8 @@ import CountryCard from "../components/CountryCard/CountryCard";
 import testimonialsData from "../data/testimonialsData";
 import TestimonialCard from "../components/TestimonialCard/TestimonialCard";
 import partnersData from "../data/partnersData";
+import coachingData from "../data/coachingData";
+import CoachingCard from "../components/CoachingCard/CoachingCard";
 
 import hero1 from "../assets/images/hero1.jpg";
 import hero2 from "../assets/images/hero2.jpg";
@@ -215,7 +217,8 @@ const Home = () => {
 
       </section>
 
-      <section className="bg-slate-100 py-5">
+      {/* Stats Strip */}
+      <section className="bg-slate-100 py-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
@@ -331,7 +334,7 @@ const Home = () => {
       </section >
 
       {/* Official Academic Partners */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-10 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Heading */}
@@ -387,6 +390,44 @@ const Home = () => {
             ))}
 
           </div>
+        </div>
+      </section>
+      
+      {/* Coaching Data */}
+      <section className="py-10 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+          <div className="text-center">
+
+            <span className="text-yellow-500 font-semibold uppercase tracking-wider">
+              Coaching Programs
+            </span>
+
+            <h2 className="mt-4 text-4xl font-bold text-[#0B2E4A]">
+              Prepare for Success
+            </h2>
+
+            <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
+              Achieve your target scores with expert coaching designed to help you study abroad with confidence.
+            </p>
+
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-2 gap-8">
+
+            {coachingData.map((program) => (
+              <CoachingCard
+                key={program.id}
+                icon={program.icon}
+                title={program.title}
+                description={program.description}
+                features={program.features}
+                buttonText={program.buttonText}
+              />
+            ))}
+
+          </div>
+
         </div>
       </section>
 
@@ -569,7 +610,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      < section className="py-20 bg-slate-900 relative overflow-hidden" >
+      < section className="py-13 bg-slate-900 relative overflow-hidden" >
 
         {/* Background Glow */}
         < div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/20 rounded-full blur-3xl" ></div >
@@ -589,19 +630,6 @@ const Home = () => {
             PR applications, and global opportunities with Keen Overseas.
           </p>
 
-          {/* Buttons */}
-          <div className="mt-10 flex flex-wrap justify-center gap-5">
-
-            <Link
-              to="/contact"
-              className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-4 rounded-2xl transition duration-300 shadow-lg">
-              Book Consultation
-            </Link>
-
-            <button className="border border-slate-600 hover:border-slate-400 text-white px-8 py-4 rounded-2xl transition duration-300">
-              Contact Us
-            </button>
-          </div>
         </div>
       </section >
 
