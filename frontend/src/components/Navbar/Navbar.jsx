@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import logo from "../../assets/icons/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,28 +14,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-900/70 backdrop-blur-lg text-white border-b border-white/10 shadow-md">
+    <nav className="sticky top-0 z-50 bg-[#F6F4EF]/100 backdrop-blur-md border-b border-[#E6ECF2]">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <Link
-          to="/"
-          onClick={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-
-            setMenuOpen(false);
-          }}
-          className="text-2xl font-bold tracking-wide"
-        >
-          Keen Overseas
+        <Link to="/">
+          <img
+            src={logo}
+            alt="Keen Overseas"
+            className="h-12 md:h-14 w-auto"
+          />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 font-medium">
+        <div className="hidden md:flex items-center gap-8 font-medium">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
@@ -47,18 +41,26 @@ const Navbar = () => {
               }
               className={({ isActive }) =>
                 isActive
-                  ? "text-yellow-400"
-                  : "hover:text-yellow-400 transition duration-300"
+                  ? "text-[#C89B3C] font-semibold"
+                  : "text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
               }
             >
               {link.name}
             </NavLink>
           ))}
+
+          <Link
+            to="/contact"
+            className="bg-[#0B2E4A] hover:bg-[#3F5C7A] text-white px-5 py-2 rounded-lg font-semibold transition duration-300 shadow-sm"
+          >
+            Free Consultation
+          </Link>
+
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-3xl"
+          className="md:hidden text-3xl text-[#0B2E4A]"
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -74,7 +76,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-white/10 px-6 py-5 space-y-5">
+        <div className="md:hidden bg-white backdrop-blur-lg border-t border-white/10 px-6 py-5 space-y-5">
 
           {navLinks.map((link) => (
             <NavLink
@@ -83,13 +85,22 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 isActive
-                  ? "block text-yellow-400 font-medium"
-                  : "block hover:text-yellow-400 transition duration-300"
+                  ? "block text-[#C89B3C] font-semibold"
+                  : "block text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
               }
             >
               {link.name}
             </NavLink>
           ))}
+
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="block w-full text-center bg-[#0B2E4A] hover:bg-[#3F5C7A] text-white font-semibold py-3 rounded-lg transition duration-300"
+          >
+            Free Consultation
+          </Link>
+
         </div>
       )}
     </nav>

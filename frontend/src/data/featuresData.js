@@ -1,41 +1,41 @@
 import {
   FaUserTie,
-  FaGlobe,
-  FaClock,
-  FaHeadset,
+  FaClipboardCheck,
+  FaPassport,
+  FaHandsHelping,
 } from "react-icons/fa";
 
 const featuresData = [
   {
     id: 1,
     icon: FaUserTie,
-    title: "Expert Consultants",
+    title: "Personalized Counseling",
     description:
-      "Experienced immigration professionals guiding you through every step.",
+      "Tailored guidance to help you choose the right country, university, and pathway based on your goals.",
   },
 
   {
     id: 2,
-    icon: FaGlobe,
-    title: "Global Opportunities",
+    icon: FaClipboardCheck,
+    title: "Transparent Process",
     description:
-      "Access immigration and visa services for multiple top destinations.",
+      "Clear communication, honest advice, and complete transparency throughout your journey.",
   },
 
   {
     id: 3,
-    icon: FaClock,
-    title: "Fast Processing",
+    icon: FaPassport,
+    title: "Visa Expertise",
     description:
-      "Efficient documentation and timely application handling for clients.",
+      "Professional visa assistance and documentation support to maximize your chances of approval.",
   },
 
   {
     id: 4,
-    icon: FaHeadset,
-    title: "24/7 Support",
+    icon: FaHandsHelping,
+    title: "End-to-End Support",
     description:
-      "Dedicated support team available to assist whenever needed.",
+      "From application submission to pre-departure guidance, we're with you every step of the way.",
   },
 ];
 

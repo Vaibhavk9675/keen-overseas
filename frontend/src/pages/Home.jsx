@@ -11,16 +11,13 @@ import countriesData from "../data/countriesData";
 import CountryCard from "../components/CountryCard/CountryCard";
 import testimonialsData from "../data/testimonialsData";
 import TestimonialCard from "../components/TestimonialCard/TestimonialCard";
+import partnersData from "../data/partnersData";
 
 import hero1 from "../assets/images/hero1.jpg";
 import hero2 from "../assets/images/hero2.jpg";
 import hero3 from "../assets/images/hero3.jpg";
 import hero4 from "../assets/images/hero4.jpg";
 
-import omnisLogo from "../assets/partener/omnis.svg";
-import setiLogo from "../assets/partener/seti.png";
-import internapaLogo from "../assets/partener/internapa.jpg";
-import stephenLogo from "../assets/partener/stephen.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade, } from "swiper/modules";
@@ -97,28 +94,6 @@ const processSteps = [
   },
 ];
 
-const partners = [
-  {
-    logo: omnisLogo,
-    name: "International College Omnis",
-    country: "Russia",
-  },
-  {
-    logo: setiLogo,
-    name: "SETI Institute",
-    country: "Singapore",
-  },
-  {
-    logo: internapaLogo,
-    name: "Internapa College",
-    country: "Cyprus",
-  },
-  {
-    logo: stephenLogo,
-    name: "Stephen Business School",
-    country: "Mauritius",
-  },
-];
 
 const Home = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -149,253 +124,149 @@ const Home = () => {
     <>
 
       {/* Hero Section */}
-      <section className="relative bg-slate-100 overflow-hidden md:min-h-screen md:flex md:items-center">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-yellow-50 opacity-80"></div>
+      <section className="relative h-screen overflow-hidden">
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-3 pb-12 md:pt-24 md:pb-16 grid grid-cols-1 lg:grid-cols-2 gap-9 items-center">
+        <Swiper
+          modules={[Autoplay, Pagination, EffectFade]}
+          effect="fade"
+          speed={1200}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          loop={true}
+          className="h-full w-full"
+        >
+          {[hero1, hero2, hero3, hero4].map((image, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative h-screen">
 
-          {/* Left Content */}
-          <motion.div
-            className="order-1"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+                {/* Background Image */}
+                <img
+                  src={image}
+                  alt={`Hero ${index + 1}`}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
 
-            {/* <span className="bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full text-sm font-medium">
-              Trusted Immigration Guidance.
-            </span> */}
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-[#0B2E4A]/70"></div>
 
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
-              Your Gateway To Global Education & Immigration Success.
-            </h1>
-
-            <div className="hidden lg:block">
-              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                Keen Overseas provides expert guidance for university admissions, visa assistance, scholarships, and immigration services to help you achieve your international dreams.
-              </p>
-
-              {/* <div className="mt-8 grid grid-cols-2 gap-3 text-slate-700">
-                <p>✓ Free Counseling</p>
-                <p>✓ Visa Assistance</p>
-                <p>✓ Scholarship Guidance</p>
-                <p>✓ End-to-End Support</p>
-              </div> */}
-
-              <div className="mt-8 flex flex-col sm:flex-row gap-5">
-
-                <Link
-                  to="/contact"
-                  className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-xl transition duration-300 shadow-md"
+                {/* Hero Content */}
+                <motion.div
+                  className="absolute inset-0 z-20 flex items-center justify-center text-center px-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
                 >
-                  Get Consultation
-                </Link>
+                  <div className="max-w-4xl">
 
-                <Link
-                  to="/services"
-                  className="border border-slate-300 hover:border-slate-500 text-slate-700 px-6 py-3 rounded-xl transition duration-300"
-                >
-                  Explore Services
-                </Link>
+                    <motion.h1
+                      className="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      Your Gateway To Global Education
+                      <br />
+                      & Immigration Success
+                    </motion.h1>
 
-              </div>
+                    <motion.p
+                      className="mt-6 text-lg md:text-xl text-[#E6ECF2] max-w-2xl mx-auto leading-relaxed"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      Admissions • Student Visas • Scholarships • Immigration Guidance
+                    </motion.p>
 
-              <div
-                ref={statsRef}
-                className="mt-10 grid grid-cols-2 sm:grid-cols-2  gap-6">
-                <div>
-                  <h2 className="text-3xl font-bold text-slate-900">
-                    <h2 className="text-3xl font-bold text-slate-900">
-                      <AnimatedCounter end={500} suffix="+" start={startCounting} />
-                    </h2>
-                  </h2>
+                    {/* Buttons */}
+                    <motion.div
+                      className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                    >
+                      <Link
+                        to="/contact"
+                        className="bg-[#AB2330] hover:bg-[#921E29] text-white font-semibold px-8 py-4 rounded-xl shadow-xl transition duration-300"
+                      >
+                        Book Free Consultation
+                      </Link>
 
-                  <p className="text-slate-500 text-sm">
-                    Successful Applications
-                  </p>
-                </div>
+                      <Link
+                        to="/countries"
+                        className="border-2 border-white text-white hover:bg-white hover:text-[#0B2E4A] font-semibold px-8 py-4 rounded-xl transition duration-300"
+                      >
+                        Explore Destinations
+                      </Link>
+                    </motion.div>
 
-                <div>
-                  <h2 className="text-3xl font-bold text-slate-900">
-                    <AnimatedCounter end={14} suffix="+" start={startCounting} />
-                  </h2>
-                  <p className="text-slate-500 text-sm">
-                    Years Experience in Study Visas
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-3xl font-bold text-slate-900">
-                    <AnimatedCounter end={98} suffix="%" start={startCounting} />
-                  </h2>
-                  <p className="text-slate-500 text-sm">
-                    Visa Success Rate
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-3xl font-bold text-slate-900">
-                    <AnimatedCounter end={400} suffix="+" start={startCounting} />
-                  </h2>
-
-                  <p className="text-slate-500 text-sm">
-                    Students Selected
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </motion.div>
-
-          {/* Right Carousel */}
-          <motion.div
-            className="relative w-full order-2"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <Swiper
-              modules={[Autoplay, Pagination, EffectFade,]}
-              effect="fade"
-              speed={800}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              loop={true}
-              className="rounded-3xl shadow-2xl overflow-hidden"
-            >
-              {[
-                {
-                  image: hero1,
-                  title: "Study at Top Global Universities",
-                },
-                {
-                  image: hero2,
-                  title: "Turn Your Global Dreams Into Reality",
-                },
-                {
-                  image: hero3,
-                  title: "Personalized Guidance at Every Step",
-                },
-                {
-                  image: hero4,
-                  title: "Explore Opportunities Worldwide",
-                },
-              ].map((slide, index) => (
-                <SwiperSlide key={index}>
-                  <div className="relative">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className=" w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
-                    />
-
-                    {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-black/30 flex items-end">
-                      <div className="p-4 sm:p-6 md:p-8 text-white">
-                        <h3
-                          className=" text-lg sm:text-2xl md:text-3xl font-bold leading-tight">
-                          {slide.title}
-                        </h3>
-                      </div>
-                    </div>
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </motion.div>
+                </motion.div>
 
-          {/* ADD MOBILE CONTENT HERE */}
-          <div className="lg:hidden order-3 mt-5">
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Keen Overseas provides expert guidance for university admissions,
-              visa assistance, scholarships, and immigration services to help
-              you achieve your international dreams.
-            </p>
+      </section>
 
-            <div className="mt-6 grid grid-cols-2 gap-3 text-slate-700">
-              <p>✓ Free Counseling</p>
-              <p>✓ Visa Assistance</p>
-              <p>✓ Scholarship Guidance</p>
-              <p>✓ End-to-End Support</p>
+      <section className="bg-slate-100 py-5">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0B2E4A]">
+                <AnimatedCounter end={500} suffix="+" />
+              </h2>
+
+              <p className="mt-2 text-black text-sm md:text-base">
+                Successful Applications
+              </p>
             </div>
 
-            <div className="mt-6 flex flex-col gap-4">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0B2E4A]">
+                <AnimatedCounter end={14} suffix="+" />
+              </h2>
 
-              <Link
-                to="/contact"
-                className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-6 py-3 rounded-xl transition duration-300 shadow-md text-center"
-              >
-                Get Consultation
-              </Link>
-
-              <Link
-                to="/services"
-                className="border border-slate-300 hover:border-slate-500 text-slate-700 px-6 py-3 rounded-xl transition duration-300 text-center"
-              >
-                Explore Services
-              </Link>
-
+              <p className="mt-2 text-black text-sm md:text-base">
+                Years Experience
+              </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-6">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0B2E4A]">
+                <AnimatedCounter end={98} suffix="%" />
+              </h2>
 
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900">
-                  500+
-                </h2>
+              <p className="mt-2 text-black text-sm md:text-base">
+                Visa Success Rate
+              </p>
+            </div>
 
-                <p className="text-slate-500 text-sm">
-                  Successful Applications
-                </p>
-              </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0B2E4A]">
+                <AnimatedCounter end={1000} suffix="+" />
+              </h2>
 
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900">
-                  14+
-                </h2>
-
-                <p className="text-slate-500 text-sm">
-                  Years Experience
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900">
-                  98%
-                </h2>
-
-                <p className="text-slate-500 text-sm">
-                  Visa Success Rate
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900">
-                  1000+
-                </h2>
-
-                <p className="text-slate-500 text-sm">
-                  Students Selected
-                </p>
-              </div>
-
+              <p className="mt-2 text-black text-sm md:text-base">
+                Students Selected
+              </p>
             </div>
 
           </div>
 
         </div>
-      </section >
+      </section>
 
       {/* Services Section */}
-      < section className="py-20 bg-white" >
+      {/* < section className="py-20 bg-white" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="text-center">
@@ -421,27 +292,32 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section >
+      </section > */}
 
       {/* Why Choose Us */}
-      {/* < section className="py-20 bg-slate-100" >
+      < section className="py-10 bg-slate-100" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Heading */}
-      {/* <div className="text-center">
+          <div className="text-center">
 
-            <h2 className="mt-4 text-4xl font-bold text-slate-900">
+            <span className="text-yellow-500 font-semibold uppercase tracking-wider">
+              Why Choose Keen Overseas ?
+            </span>
+
+
+            <h2 className="mt-4 text-4xl font-bold text-black">
               Trusted Immigration Experts
             </h2>
 
-            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-black max-w-2xl mx-auto">
               We simplify the immigration journey with expert guidance,
               transparent processes, and dedicated support.
             </p>
-          </div> */}
+          </div>
 
-      {/* Feature Cards */}
-      {/* <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Feature Cards */}
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuresData.map((feature) => (
               <FeatureCard
                 key={feature.id}
@@ -452,7 +328,67 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section > */}
+      </section >
+
+      {/* Official Academic Partners */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+          {/* Heading */}
+          <div className="text-center">
+            <span className="text-yellow-500 font-semibold uppercase tracking-wider">
+              Trusted Partnerships
+            </span>
+
+            <h2 className="mt-4 text-4xl font-bold text-slate-900">
+              Our Official Academic Partners
+            </h2>
+
+            <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
+              We proudly collaborate with internationally recognized institutions
+              to provide students with world-class education opportunities.
+            </p>
+          </div>
+
+          {/* Partner Cards */}
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            {partnersData.map((partner) => (
+              <div
+                key={partner.id}
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 p-8 border border-slate-100"
+              >
+
+                {/* Logo */}
+                <div className="h-24 flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-20 object-contain"
+                  />
+                </div>
+
+                {/* Institution Name */}
+                <h3 className="mt-5 text-lg  font-bold text-slate-900">
+                  {partner.name}
+                </h3>
+
+                {/* Country */}
+                <p className="mt-2 text-slate-500">
+                  {partner.country}
+                </p>
+
+                {/* Badge */}
+                <div className="mt-5 inline-block bg-[#3F5C7A] text-white text-sm font-medium px-4 py-2 rounded-full">
+                  Official Academic Partner
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
 
       {/* Process Timeline */}
       <section className="py-20 bg-white">
@@ -512,65 +448,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Official Academic Partners */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
 
-          {/* Heading */}
-          <div className="text-center">
-            <span className="text-yellow-500 font-semibold uppercase tracking-wider">
-              Trusted Partnerships
-            </span>
-
-            <h2 className="mt-4 text-4xl font-bold text-slate-900">
-              Our Official Academic Partners
-            </h2>
-
-            <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
-              We proudly collaborate with internationally recognized institutions
-              to provide students with world-class education opportunities.
-            </p>
-          </div>
-
-          {/* Partner Cards */}
-          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 p-8 border border-slate-100"
-              >
-
-                {/* Logo */}
-                <div className="h-24 flex items-center justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-h-20 object-contain"
-                  />
-                </div>
-
-                {/* Institution Name */}
-                <h3 className="mt-5 text-lg  font-bold text-slate-900">
-                  {partner.name}
-                </h3>
-
-                {/* Country */}
-                <p className="mt-2 text-slate-500">
-                  {partner.country}
-                </p>
-
-                {/* Badge */}
-                <div className="mt-5 inline-block bg-yellow-100 text-yellow-700 text-sm font-medium px-4 py-2 rounded-full">
-                  Official Academic Partner
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
 
       {/* Countries Section */}
       < section className="py-20 bg-white" >
