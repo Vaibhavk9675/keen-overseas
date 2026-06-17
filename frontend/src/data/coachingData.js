@@ -5,28 +5,65 @@ const coachingData = [
     id: 1,
     icon: FaGraduationCap,
     title: "IELTS Coaching",
-    description:
-      "Comprehensive Academic and General Training preparation designed to help you achieve your target band score.",
-    features: [
-      "Academic & General Training",
-      "Mock Tests & Practice Sessions",
-      "Expert Faculty Guidance",
+
+    about:
+      "IELTS is one of the world's most recognized English proficiency examinations accepted by universities, and immigration authorities worldwide.",
+
+    sections: ["Listening", "Reading", "Writing", "Speaking"],
+
+    examPattern: [
+      "Listening – 30 Minutes",
+      "Reading – 60 Minutes",
+      "Writing – 60 Minutes",
+      "Speaking – 11–14 Minutes",
     ],
-    buttonText: "Learn More",
+
+    scoring: [
+      "9.0 – Expert User",
+      "8.0 – Very Good User",
+      "⭐ 6.5–7.0 – Common university requirement",
+      "6.0 – Competent User",
+    ],
+
+    acceptedFor: [
+      "Study Abroad",
+      "Work Visas",
+      "Permanent Residency",
+    ],
   },
 
   {
     id: 2,
     icon: FaMicrophone,
     title: "PTE Coaching",
-    description:
-      "Modern PTE preparation focused on improving speaking, writing, and overall exam performance.",
-    features: [
-      "AI-Based Preparation",
-      "Speaking & Writing Practice",
-      "Fast Score Improvement",
+
+    about:
+      "PTE Academic is a computer-based English proficiency exam accepted globally by universities and immigration authorities.",
+
+    sections: [
+      "Speaking & Writing",
+      "Reading",
+      "Listening",
     ],
-    buttonText: "Learn More",
+
+    examPattern: [
+      "Speaking & Writing – 54–67 Minutes",
+      "Reading – 29–30 Minutes",
+      "Listening – 30–43 Minutes",
+    ],
+
+    scoring: [
+      "86–90 – Excellent",
+      "76–85 – Very Good",
+      "⭐ 59–65 – Common requirement",
+      "43–58 – Developing",
+    ],
+
+    acceptedFor: [
+      "Universities",
+      "Student Visas",
+      "Migration",
+    ],
   },
 ];
 

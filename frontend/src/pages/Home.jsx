@@ -14,6 +14,8 @@ import TestimonialCard from "../components/TestimonialCard/TestimonialCard";
 import partnersData from "../data/partnersData";
 import coachingData from "../data/coachingData";
 import CoachingCard from "../components/CoachingCard/CoachingCard";
+import CourseModal from "../components/CourseModal/CourseModal";
+import CountryModal from "../components/CountryModal/CountryModal";
 
 import hero1 from "../assets/images/hero1.jpg";
 import hero2 from "../assets/images/hero2.jpg";
@@ -63,41 +65,43 @@ const faqs = [
 
 // process timeline
 
-const processSteps = [
-  {
-    icon: <FaUserGraduate />,
-    title: "Free Counselling",
-    description:
-      "Understand your goals and receive expert guidance tailored to your profile.",
-  },
-  {
-    icon: <FaUniversity />,
-    title: "University Selection",
-    description:
-      "Choose the right universities and programs based on your aspirations.",
-  },
-  {
-    icon: <FaFileAlt />,
-    title: "Documentation",
-    description:
-      "Get complete support for SOPs, applications, and required paperwork.",
-  },
-  {
-    icon: <FaPassport />,
-    title: "Visa Assistance",
-    description:
-      "Our experts guide you through the entire visa application process.",
-  },
-  {
-    icon: <FaPlaneDeparture />,
-    title: "Fly Abroad",
-    description:
-      "Receive pre-departure support and confidently begin your journey.",
-  },
-];
+// const processSteps = [
+//   {
+//     icon: <FaUserGraduate />,
+//     title: "Free Counselling",
+//     description:
+//       "Understand your goals and receive expert guidance tailored to your profile.",
+//   },
+//   {
+//     icon: <FaUniversity />,
+//     title: "University Selection",
+//     description:
+//       "Choose the right universities and programs based on your aspirations.",
+//   },
+//   {
+//     icon: <FaFileAlt />,
+//     title: "Documentation",
+//     description:
+//       "Get complete support for SOPs, applications, and required paperwork.",
+//   },
+//   {
+//     icon: <FaPassport />,
+//     title: "Visa Assistance",
+//     description:
+//       "Our experts guide you through the entire visa application process.",
+//   },
+//   {
+//     icon: <FaPlaneDeparture />,
+//     title: "Fly Abroad",
+//     description:
+//       "Receive pre-departure support and confidently begin your journey.",
+//   },
+// ];
 
 
 const Home = () => {
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedCourse, setSelectedCourse] = useState(null);
   const [openFAQ, setOpenFAQ] = useState(null);
   const statsRef = useRef(null);
   const [startCounting, setStartCounting] = useState(false);
@@ -359,7 +363,7 @@ const Home = () => {
             {partnersData.map((partner) => (
               <div
                 key={partner.id}
-                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 p-8 border border-slate-100"
+                className="bg-white border border-[#E6ECF2] rounded-3xl p-8 transition-all duration-300  hover:shadow-2xl hover:border-slate-100"
               >
 
                 {/* Logo */}
@@ -392,7 +396,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Coaching Data */}
       <section className="py-10 bg-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -415,84 +419,26 @@ const Home = () => {
 
           <div className="mt-14 grid md:grid-cols-2 gap-8">
 
+
             {coachingData.map((program) => (
               <CoachingCard
                 key={program.id}
                 icon={program.icon}
                 title={program.title}
-                description={program.description}
-                features={program.features}
-                buttonText={program.buttonText}
+                description={program.about}
+                buttonText="Learn More"
+                onLearnMore={() => setSelectedCourse(program)}
               />
             ))}
 
+
           </div>
 
         </div>
       </section>
-
-      {/* Process Timeline */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-slate-900">
-              Your Journey With Keen Overseas
-            </h2>
-
-            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-              We simplify the entire process so you can focus on your future.
-            </p>
-          </div>
-
-          <div className="mt-16 relative">
-
-            {/* Desktop Line */}
-            <div className="hidden lg:block absolute top-10 left-0 right-0 h-1 bg-yellow-200 relative overflow-hidden">
-
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 relative">
-
-
-              {processSteps.map((step, index) => (
-                <div
-                  key={index}
-                  className="text-center relative"
-                >
-
-                  <div className="mx-auto w-20 h-20 rounded-full bg-yellow-500 text-white flex items-center justify-center text-3xl shadow-lg relative z-10">
-                    <span className="absolute inset-0 rounded-full bg-yellow-500 animate-ping opacity-20"></span>
-                    {step.icon}
-                  </div>
-
-                  <div className="mt-4">
-                    <span className="text-sm font-semibold text-yellow-500">
-                      STEP {index + 1}
-                    </span>
-
-                    <h3 className="mt-2 text-xl font-bold text-slate-900">
-                      {step.title}
-                    </h3>
-
-                    <p className="mt-3 text-slate-600 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
 
       {/* Countries Section */}
-      < section className="py-20 bg-white" >
+      < section className="py-20 bg-slate-50" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Heading */}
@@ -516,6 +462,8 @@ const Home = () => {
                 name={country.name}
                 image={country.image}
                 description={country.description}
+                buttonText="Learn More"
+                onLearnMore={() => setSelectedCountry(country)}
               />
             ))}
           </div>
@@ -554,7 +502,7 @@ const Home = () => {
       </section >
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
 
           <div className="text-center">
@@ -632,6 +580,16 @@ const Home = () => {
 
         </div>
       </section >
+
+      <CourseModal
+        course={selectedCourse}
+        onClose={() => setSelectedCourse(null)}
+      />
+
+      <CountryModal
+        country={selectedCountry}
+        onClose={() => setSelectedCountry(null)}
+      />
 
     </>
   );
