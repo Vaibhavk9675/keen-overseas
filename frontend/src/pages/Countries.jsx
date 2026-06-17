@@ -32,17 +32,17 @@ const Countries = () => {
 
           <div className="mt-10 grid grid-cols-3 gap-6 max-w-3xl mx-auto">
 
-            <div className="bg-white rounded-2xl p-5 shadow-md text-center">
+            <div className="p-5 text-center">
               <h3 className="text-3xl font-bold text-[#AB2330]">7+</h3>
               <p className="text-slate-600 mt-1">Destinations</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-5 shadow-md text-center">
+            <div className="p-5 text-center">
               <h3 className="text-3xl font-bold text-[#AB2330]">5000+</h3>
               <p className="text-slate-600 mt-1">Students Guided</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-5 shadow-md text-center">
+            <div className="p-5 text-center">
               <h3 className="text-3xl font-bold text-[#AB2330]">15+</h3>
               <p className="text-slate-600 mt-1">Partner Institutions</p>
             </div>
@@ -73,7 +73,7 @@ const Countries = () => {
             >
 
               {/* Image */}
-              <div className="overflow-hidden rounded-3xl shadow-2xl">
+              <div className="overflow-hidden rounded-3xl shadow-3xl">
                 <img
                   src={country.image}
                   alt={country.name}
