@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaUserGraduate, FaUniversity, FaFileAlt, FaPassport, FaPlaneDeparture, } from "react-icons/fa";
 
@@ -16,6 +17,7 @@ import coachingData from "../data/coachingData";
 import CoachingCard from "../components/CoachingCard/CoachingCard";
 import CourseModal from "../components/CourseModal/CourseModal";
 import CountryModal from "../components/CountryModal/CountryModal";
+import FaqSection from "../components/FaqSection/FaqSection.jsx";
 
 import hero1 from "../assets/images/hero1.jpg";
 import hero2 from "../assets/images/hero2.jpg";
@@ -33,71 +35,6 @@ import "swiper/css/pagination";
 
 import AnimatedCounter from "../components/AnimatedCounter/AnimatedCounter";
 
-// FAQ Section
-
-const faqs = [
-  {
-    question: "Which countries do you provide study visa services for?",
-    answer:
-      "We provide expert guidance for Canada, UK, Australia, USA, New Zealand, and several European countries.",
-  },
-  {
-    question: "Do you help with university admissions?",
-    answer:
-      "Yes, we assist with university selection, application processing, documentation, and admission procedures.",
-  },
-  {
-    question: "Do you provide scholarship guidance?",
-    answer:
-      "Absolutely. We help students identify and apply for scholarships that match their academic profile.",
-  },
-  {
-    question: "How long does the visa process take?",
-    answer:
-      "The processing time depends on the country and visa type. Our counselors provide estimated timelines during consultation.",
-  },
-  {
-    question: "Is the first consultation free?",
-    answer:
-      "Yes, we offer an initial consultation to understand your goals and guide you through the best options.",
-  },
-];
-
-// process timeline
-
-// const processSteps = [
-//   {
-//     icon: <FaUserGraduate />,
-//     title: "Free Counselling",
-//     description:
-//       "Understand your goals and receive expert guidance tailored to your profile.",
-//   },
-//   {
-//     icon: <FaUniversity />,
-//     title: "University Selection",
-//     description:
-//       "Choose the right universities and programs based on your aspirations.",
-//   },
-//   {
-//     icon: <FaFileAlt />,
-//     title: "Documentation",
-//     description:
-//       "Get complete support for SOPs, applications, and required paperwork.",
-//   },
-//   {
-//     icon: <FaPassport />,
-//     title: "Visa Assistance",
-//     description:
-//       "Our experts guide you through the entire visa application process.",
-//   },
-//   {
-//     icon: <FaPlaneDeparture />,
-//     title: "Fly Abroad",
-//     description:
-//       "Receive pre-departure support and confidently begin your journey.",
-//   },
-// ];
-
 
 const Home = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -105,6 +42,12 @@ const Home = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const statsRef = useRef(null);
   const [startCounting, setStartCounting] = useState(false);
+
+  const [showAllCountries, setShowAllCountries] = useState(false);
+
+  const displayedCountries = showAllCountries
+    ? countriesData
+    : countriesData.slice(0, 4);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -272,35 +215,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      {/* < section className="py-20 bg-white" >
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-
-          <div className="text-center">
-
-            <h2 className="mt-4 text-4xl font-bold text-slate-900">
-              Immigration Solutions Designed For You
-            </h2>
-
-            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-              We provide complete visa and immigration support for students,
-              professionals, and travelers worldwide.
-            </p>
-          </div>
-
-          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {servicesData.map((service) => (
-              <ServiceCard
-                key={service.id}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section > */}
-
       {/* Why Choose Us */}
       < section className="py-10 bg-slate-100" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -438,11 +352,15 @@ const Home = () => {
       </section>
 
       {/* Countries Section */}
-      < section className="py-20 bg-slate-50" >
+      < section className="py-10 bg-slate-50" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Heading */}
           <div className="text-center">
+
+            <span className="text-yellow-500 font-semibold uppercase tracking-wider">
+              Study Destinations
+            </span>
 
             <h2 className="mt-4 text-4xl font-bold text-slate-900">
               Explore Opportunities Worldwide
@@ -456,7 +374,7 @@ const Home = () => {
 
           {/* Country Cards */}
           <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {countriesData.map((country) => (
+            {displayedCountries.map((country) => (
               <CountryCard
                 key={country.id}
                 name={country.name}
@@ -468,10 +386,23 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <div className="mt-12 text-center">
+          <button
+            onClick={() => setShowAllCountries(!showAllCountries)}
+            className=" bg-[#AB2330] hover:bg-[#941F2A] inline-flex items-center gap-2 text-white font-semibold cursor-pointer px-8 py-4 rounded-xl transition duration-300">
+            {showAllCountries
+              ? "Show Less"
+              : "Explore More"}
+            <FaChevronDown
+              className={`transition-transform duration-300 ${showAllCountries ? "rotate-180" : ""
+                }`}
+            />
+          </button>
+        </div>
       </section >
 
       {/* Testimonials Section */}
-      < section className="py-20 bg-slate-100" >
+      < section className="py-10 bg-slate-100" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Heading */}
@@ -502,60 +433,7 @@ const Home = () => {
       </section >
 
       {/* FAQ Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-6 md:px-12">
-
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-slate-900">
-              Frequently Asked Questions
-            </h2>
-
-            <p className="mt-4 text-slate-600">
-              Find answers to the most common questions about studying and immigrating abroad.
-            </p>
-          </div>
-
-          <div className="mt-12 space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border border-slate-200 rounded-2xl overflow-hidden shadow-sm"
-              >
-                <button
-                  onClick={() =>
-                    setOpenFAQ(openFAQ === index ? null : index)
-                  }
-                  className="w-full px-6 py-5 flex justify-between items-center text-left bg-white hover:bg-slate-50 transition"
-                >
-                  <span className="font-semibold text-slate-900">
-                    {faq.question}
-                  </span>
-
-                  <span className="text-2xl text-yellow-500">
-                    {openFAQ === index ? "−" : "+"}
-                  </span>
-                </button>
-
-                <AnimatePresence>
-                  {openFAQ === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-5 text-slate-600 leading-relaxed">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection />
 
       {/* CTA Section */}
       < section className="py-13 bg-slate-900 relative overflow-hidden" >
