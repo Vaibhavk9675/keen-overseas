@@ -1,30 +1,87 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const ServiceCard = ({ icon: Icon, title, description }) => {
+const ServiceCard = ({
+  icon: Icon,
+  title,
+  description,
+}) => {
   return (
-    <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 p-8 border border-slate-100">
+    <div
+      className="
+        group
+        bg-white
+        rounded-3xl
+        p-8
+        border
+        border-[#E6ECF2]
+        shadow-md
+        hover:shadow-2xl
+        hover:-translate-y-2
+        transition-all
+        duration-300
+      "
+    >
 
       {/* Icon */}
-      <div className="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center text-yellow-500 text-3xl">
+      <div
+        className="
+          w-16
+          h-16
+          rounded-2xl
+          bg-[#C89B3C]/10
+          text-[#C89B3C]
+          flex
+          items-center
+          justify-center
+          text-3xl
+          group-hover:bg-[#C89B3C]
+          group-hover:text-white
+          transition-all
+          duration-300
+        "
+      >
         <Icon />
       </div>
 
       {/* Title */}
-      <h3 className="mt-6 text-2xl font-bold text-slate-900">
+      <h3
+        className="
+          mt-6
+          text-2xl
+          font-bold
+          text-[#0B2E4A]
+        "
+      >
         {title}
       </h3>
 
       {/* Description */}
-      <p className="mt-4 text-slate-600 leading-relaxed">
+      <p
+        className="
+          mt-4
+          text-[#6B7A8C]
+          leading-relaxed
+        "
+      >
         {description}
       </p>
 
       {/* Button */}
-      <Link 
-      to="/services" className="mt-6 text-yellow-600 font-semibold hover:text-yellow-500 transition">
+      <Link
+        to="/contact"
+        className="
+          inline-flex
+          items-center
+          mt-6
+          font-semibold
+          text-[#AB2330]
+          hover:text-[#0B2E4A]
+          transition
+        "
+      >
         Learn More →
       </Link>
+
     </div>
   );
 };

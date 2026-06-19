@@ -435,30 +435,6 @@ const Home = () => {
       {/* FAQ Section */}
       <FaqSection />
 
-      {/* CTA Section */}
-      < section className="py-13 bg-slate-900 relative overflow-hidden" >
-
-        {/* Background Glow */}
-        < div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/20 rounded-full blur-3xl" ></div >
-
-        <div className="relative max-w-5xl mx-auto px-6 md:px-12 text-center">
-
-          <span className="text-yellow-500 font-semibold uppercase tracking-wider">
-            Start Your Journey
-          </span>
-
-          <h2 className="mt-5 text-4xl md:text-5xl font-bold text-white leading-tight">
-            Ready To Build Your Future Abroad?
-          </h2>
-
-          <p className="mt-6 text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
-            Get expert guidance for study visas, immigration,
-            PR applications, and global opportunities with Keen Overseas.
-          </p>
-
-        </div>
-      </section >
-
       <CourseModal
         course={selectedCourse}
         onClose={() => setSelectedCourse(null)}
