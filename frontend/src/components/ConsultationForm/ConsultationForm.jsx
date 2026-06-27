@@ -162,7 +162,7 @@ const ConsultationForm = ({
                         🔒 Your information is completely secure.
                     </p>
 
-                    <div className="mt-3 flex justify-center items-center gap-2">
+                    {/* <div className="mt-3 flex justify-center items-center gap-2">
 
                         <span className="text-[#C89B3C] text-lg">
                             ★★★★★
@@ -172,7 +172,7 @@ const ConsultationForm = ({
                             Trusted by 1000+ Students
                         </span>
 
-                    </div>
+                    </div> */}
 
                 </div>
 
