@@ -4,13 +4,20 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaWhatsapp,
+  FaFacebookF,
+  FaInstagramSquare,
+  FaInstagram,
+  FaSnapchat,
+  FaSnapchatSquare,
+  FaSnapchatGhost,
+  FaTwitter,
 } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-[#0B2E4A] text-white">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-10">
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 
@@ -25,6 +32,7 @@ const Footer = () => {
               through expert guidance, trusted partnerships, and
               personalized support.
             </p>
+
           </div>
 
           {/* Quick Links */}
@@ -71,6 +79,24 @@ const Footer = () => {
                 </Link>
               </li>
 
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="hover:text-[#C89B3C] transition"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/terms-and-conditions"
+                  className="hover:text-[#C89B3C] transition"
+                >
+                  Terms and Condtion
+                </Link>
+              </li>
+
             </ul>
           </div>
 
@@ -113,32 +139,52 @@ const Footer = () => {
 
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="mt-1 text-[#C89B3C]" />
-                <span>Your Office Address</span>
+                <span>Second Floor, Raj Plaza, 207,<br /> Dilaram Chowk, Rajpur Rd,<br />Dehradun, Uttarakhand 248001</span>
               </div>
 
             </div>
 
-            <a
-              href="https://wa.me/916398610995"
-              target="_blank"
-              rel="noreferrer"
-              className="
-                inline-flex
-                items-center
-                gap-2
-                mt-6
-                bg-[#AB2330]
-                hover:bg-[#941F2A]
-                px-5
-                py-3
-                rounded-xl
-                font-medium
-                transition
-              "
-            >
-              <FaWhatsapp />
-              WhatsApp Us
-            </a>
+            <div className="inline-flex items-center gap-2">
+              {/* <a
+                href="https://wa.me/916398610995"
+                target="_blank"
+                rel="noreferrer"
+                className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
+                <FaWhatsapp className="text-2xl"/>
+              </a> */}
+
+              <a
+                href="https://wa.me/916398610995"
+                target="_blank"
+                rel="noreferrer"
+                className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
+                <FaFacebookF className="text-2xl" />
+              </a>
+
+              <a
+                href="https://wa.me/916398610995"
+                target="_blank"
+                rel="noreferrer"
+                className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
+                <FaInstagram className="text-2xl" />
+              </a>
+
+              <a
+                href="https://wa.me/916398610995"
+                target="_blank"
+                rel="noreferrer"
+                className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
+                <FaSnapchatGhost className="text-2xl" />
+              </a>
+
+              <a
+                href="https://wa.me/916398610995"
+                target="_blank"
+                rel="noreferrer"
+                className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
+                <FaTwitter className="text-2xl" />
+              </a>
+            </div>
 
           </div>
 
@@ -154,16 +200,6 @@ const Footer = () => {
           <p className="text-white/60 text-sm">
             © 2026 Keen Overseas. All rights reserved.
           </p>
-
-          <div className="flex gap-5 text-sm text-white/60">
-            <span className="hover:text-[#C89B3C] cursor-pointer transition">
-              Privacy Policy
-            </span>
-
-            <span className="hover:text-[#C89B3C] cursor-pointer transition">
-              Terms & Conditions
-            </span>
-          </div>
 
         </div>
 

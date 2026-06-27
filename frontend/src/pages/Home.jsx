@@ -18,6 +18,7 @@ import CoachingCard from "../components/CoachingCard/CoachingCard";
 import CourseModal from "../components/CourseModal/CourseModal";
 import CountryModal from "../components/CountryModal/CountryModal";
 import FaqSection from "../components/FaqSection/FaqSection.jsx";
+import ConsultationSection from "../components/ConsultationSection/ConsultationSection.jsx";
 
 import hero1 from "../assets/images/hero1.jpg";
 import hero2 from "../assets/images/hero2.jpg";
@@ -165,7 +166,7 @@ const Home = () => {
       </section>
 
       {/* Stats Strip */}
-      <section className="bg-slate-100 py-10">
+      <section className="py-10 bg-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
@@ -214,6 +215,8 @@ const Home = () => {
 
         </div>
       </section>
+
+      <ConsultationSection />
 
       {/* Why Choose Us */}
       < section className="py-10 bg-slate-100" >

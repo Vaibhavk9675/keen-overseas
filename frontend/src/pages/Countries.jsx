@@ -30,25 +30,6 @@ const Countries = () => {
 
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-6 max-w-3xl mx-auto">
-
-            <div className="p-5 text-center">
-              <h3 className="text-3xl font-bold text-[#AB2330]">7+</h3>
-              <p className="text-slate-600 mt-1">Destinations</p>
-            </div>
-
-            <div className="p-5 text-center">
-              <h3 className="text-3xl font-bold text-[#AB2330]">5000+</h3>
-              <p className="text-slate-600 mt-1">Students Guided</p>
-            </div>
-
-            <div className="p-5 text-center">
-              <h3 className="text-3xl font-bold text-[#AB2330]">15+</h3>
-              <p className="text-slate-600 mt-1">Partner Institutions</p>
-            </div>
-
-          </div>
-
         </div>
       </section>
 

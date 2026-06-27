@@ -10,7 +10,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-slate-50">
       <div className="max-w-4xl mx-auto px-6">
 
         <div className="text-center">

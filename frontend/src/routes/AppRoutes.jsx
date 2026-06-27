@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Services from "../pages/Services";
 import Countries from "../pages/Countries";
 import Contact from "../pages/Contact";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsConditions from "../pages/TermsCondition";
 
 import MainLayout from "../layout/MainLayout";
 
@@ -15,6 +17,8 @@ const AppRoutes = () => {
         <Route path="services" element={<Services />} />
         <Route path="countries" element={<Countries />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
       </Route>
     </Routes>
   );

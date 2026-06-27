@@ -2,9 +2,13 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import logo from "../../assets/icons/logo.png";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { darkMode, toggleTheme } = useTheme();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -49,6 +53,12 @@ const Navbar = () => {
             </NavLink>
           ))}
 
+          <button
+            onClick={toggleTheme}
+            className=" w-11 h-11 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] hover:bg-slate-100 transition-all duration-300">
+            {darkMode ? <FiSun /> : <FiMoon />}
+          </button>
+
           <Link
             to="/contact"
             className="bg-[#0B2E4A] hover:bg-[#3F5C7A] text-white px-5 py-2 rounded-lg font-semibold transition duration-300 shadow-sm"
@@ -92,6 +102,13 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
+
+          <button
+            onClick={toggleTheme}
+            className=" w-full flex items-center justify-center \ gap-3 py-3 rounded-lg border border-slate-200 text-[#0B2E4A] transition">
+            {darkMode ? <FiSun /> : <FiMoon />}
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
 
           <Link
             to="/contact"
