@@ -19,6 +19,7 @@ import CourseModal from "../components/CourseModal/CourseModal";
 import CountryModal from "../components/CountryModal/CountryModal";
 import FaqSection from "../components/FaqSection/FaqSection.jsx";
 import ConsultationSection from "../components/ConsultationSection/ConsultationSection.jsx";
+import SEO from "../components/SEO";
 
 import hero1 from "../assets/images/hero1.jpg";
 import hero2 from "../assets/images/hero2.jpg";
@@ -72,6 +73,14 @@ const Home = () => {
 
   return (
     <>
+
+      <SEO
+        title="Keen Overseas | Study Abroad & Immigration Consultants"
+        description="Keen Overseas provides expert guidance for study abroad, student visas, university admissions, and immigration services. Book your free consultation today."
+        keywords="study abroad, student visa, immigration consultant, Canada study visa, Australia study visa, UK study visa, Keen Overseas"
+        url="https://keen-overseas.vercel.app"
+      />
+
 
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
@@ -130,7 +139,7 @@ const Home = () => {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.4 }}
                     >
-                      Admissions • Student Visas • Scholarships • Immigration Guidance
+                      Admissions • Visas • Scholarships • Immigration Guidance
                     </motion.p>
 
                     {/* Buttons */}
@@ -173,11 +182,11 @@ const Home = () => {
 
             <div>
               <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A]">
-                <AnimatedCounter end={500} suffix="+" />
+                <AnimatedCounter end={512} suffix="+" />
               </h2>
 
               <p className="mt-2 text-black text-sm md:text-base">
-                Successful Applications
+                Universities
               </p>
             </div>
 
@@ -193,7 +202,7 @@ const Home = () => {
 
             <div>
               <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A]">
-                <AnimatedCounter end={98} suffix="%" />
+                <AnimatedCounter end={92} suffix="%" />
               </h2>
 
               <p className="mt-2 text-black text-sm md:text-base">
@@ -308,8 +317,8 @@ const Home = () => {
       {/* <section className="py-10 bg-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12"> */}
 
-          {/* Heading */}
-          {/* <div className="text-center">
+      {/* Heading */}
+      {/* <div className="text-center">
             <span className="text-yellow-500 font-semibold uppercase tracking-wider">
               Trusted Colleges
             </span>
@@ -324,8 +333,8 @@ const Home = () => {
             </p>
           </div> */}
 
-          {/* Partner Cards */}
-          {/* <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Partner Cards */}
+      {/* <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
             {partnersData.map((partner) => (
               <div
@@ -333,8 +342,8 @@ const Home = () => {
                 className="bg-white border border-[#E6ECF2] rounded-3xl p-8 transition-all duration-300  hover:shadow-2xl hover:border-slate-100"
               > */}
 
-                {/* Logo */}
-                {/* <div className="h-24 flex items-center justify-center">
+      {/* Logo */}
+      {/* <div className="h-24 flex items-center justify-center">
                   <img
                     src={partner.logo}
                     alt={partner.name}
@@ -342,18 +351,18 @@ const Home = () => {
                   />
                 </div> */}
 
-                {/* Institution Name */}
-                {/* <h3 className="mt-5 text-lg  font-bold text-slate-900">
+      {/* Institution Name */}
+      {/* <h3 className="mt-5 text-lg  font-bold text-slate-900">
                   {partner.name}
                 </h3> */}
 
-                {/* Country */}
-                {/* <p className="mt-2 text-slate-500">
+      {/* Country */}
+      {/* <p className="mt-2 text-slate-500">
                   {partner.country}
                 </p> */}
 
-                {/* Badge */}
-                {/* <div className="mt-5 inline-block bg-[#3F5C7A] text-white text-sm font-medium px-4 py-2 rounded-full">
+      {/* Badge */}
+      {/* <div className="mt-5 inline-block bg-[#3F5C7A] text-white text-sm font-medium px-4 py-2 rounded-full">
                   Official Academic Partner
                 </div>
 

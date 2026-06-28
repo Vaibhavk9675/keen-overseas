@@ -23,7 +23,7 @@ const Services = () => {
             </span>
 
             <h1 className="mt-4 text-4xl md:text-5xl font-bold text-[#0B2E4A]">
-              Everything You Need For Your Study Abroad Journey
+              Everything You Need For Your Abroad Journey
             </h1>
 
             <p className="mt-5 text-slate-600 max-w-3xl mx-auto text-lg">

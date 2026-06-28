@@ -6,7 +6,7 @@ import Countries from "../pages/Countries";
 import Contact from "../pages/Contact";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsConditions from "../pages/TermsCondition";
-
+import NotFound from "../pages/NotFound";
 import MainLayout from "../layout/MainLayout";
 
 const AppRoutes = () => {
@@ -19,6 +19,7 @@ const AppRoutes = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
