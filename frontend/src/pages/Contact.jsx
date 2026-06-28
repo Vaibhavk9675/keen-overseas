@@ -14,13 +14,13 @@ const Contact = () => {
 
           <div className="grid lg:grid-cols-2 gap-14 items-start">
 
-            <ContactInfoCards />
-
             <ContactForm
               title="Book Your FREE Consultation"
               subtitle="Complete the form below and our counselors will contact you shortly."
               showMessage={true}
             />
+
+            <ContactInfoCards />
 
           </div>
 

@@ -261,11 +261,11 @@ const Home = () => {
           {/* Heading */}
           <div className="text-center">
             <span className="text-yellow-500 font-semibold uppercase tracking-wider">
-              Trusted Partnerships
+              Trusted Colleges
             </span>
 
             <h2 className="mt-4 text-4xl font-bold text-slate-900">
-              Our Official Academic Partners
+              Colleges We Prefers
             </h2>
 
             <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
