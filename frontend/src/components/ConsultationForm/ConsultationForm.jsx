@@ -89,7 +89,7 @@ const ConsultationForm = ({
                 />
 
                 <label className="block mb-2 font-medium text-[#0B2E4A]">
-                    Interested Country *
+                    Interested Country
                 </label>
 
                 <select
@@ -112,7 +112,7 @@ const ConsultationForm = ({
                 </select>
 
                 <label className="block mb-2 font-medium text-[#0B2E4A]">
-                    Preferred Intake *
+                    Preferred Intake
                 </label>
 
                 <select

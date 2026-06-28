@@ -1,6 +1,6 @@
 import consultationData from "../../data/consultationData";
-import ConsultationForm from "../ConsultationForm/ConsultationForm";
 import { FaCheckCircle, FaStar } from "react-icons/fa";
+import ContactForm from "../Contact/ContactForm";
 
 const ConsultationSection = () => {
     return (
@@ -10,7 +10,7 @@ const ConsultationSection = () => {
 
                 <section className="py-10 bg-[#F8FAFC]">
 
-                    <div className="max-w-3xl mx-auto px-6">
+                    <div className="max-w-3xl mx-auto px-3">
 
                         <div className="text-center">
 
@@ -22,7 +22,7 @@ const ConsultationSection = () => {
 
                         <div className="mt-12">
 
-                            <ConsultationForm />
+                            <ContactForm />
 
                         </div>
 
