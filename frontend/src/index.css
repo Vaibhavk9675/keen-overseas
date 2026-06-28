@@ -12,3 +12,18 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.testimonial-slider .swiper-button-next:hover::after,
+.testimonial-slider .swiper-button-prev:hover::after {
+  color: white;
+}
+
+/* Pagination */
+.testimonial-slider .swiper-pagination-bullet {
+  background: #CBD5E1;
+  opacity: 1;
+}
+
+.testimonial-slider .swiper-pagination-bullet-active {
+  background: #f0efef;
+}

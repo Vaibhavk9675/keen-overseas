@@ -19,7 +19,8 @@ import CourseModal from "../components/CourseModal/CourseModal";
 import CountryModal from "../components/CountryModal/CountryModal";
 import FaqSection from "../components/FaqSection/FaqSection.jsx";
 import ConsultationSection from "../components/ConsultationSection/ConsultationSection.jsx";
-import SEO from "../components/SEO";
+import SEO from "../components/SEO.jsx";
+import Testimonials from "../components/TestimonialsSection/TestimonialsSection.jsx";
 
 import hero1 from "../assets/images/hero1.jpg";
 import hero2 from "../assets/images/hero2.jpg";
@@ -313,66 +314,6 @@ const Home = () => {
         </div>
       </section >
 
-      {/* Official Academic Partners */}
-      {/* <section className="py-10 bg-slate-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12"> */}
-
-      {/* Heading */}
-      {/* <div className="text-center">
-            <span className="text-yellow-500 font-semibold uppercase tracking-wider">
-              Trusted Colleges
-            </span>
-
-            <h2 className="mt-4 text-4xl font-bold text-slate-900">
-              Colleges We Prefers
-            </h2>
-
-            <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
-              We proudly collaborate with internationally recognized institutions
-              to provide students with world-class education opportunities.
-            </p>
-          </div> */}
-
-      {/* Partner Cards */}
-      {/* <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            {partnersData.map((partner) => (
-              <div
-                key={partner.id}
-                className="bg-white border border-[#E6ECF2] rounded-3xl p-8 transition-all duration-300  hover:shadow-2xl hover:border-slate-100"
-              > */}
-
-      {/* Logo */}
-      {/* <div className="h-24 flex items-center justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-h-20 object-contain"
-                  />
-                </div> */}
-
-      {/* Institution Name */}
-      {/* <h3 className="mt-5 text-lg  font-bold text-slate-900">
-                  {partner.name}
-                </h3> */}
-
-      {/* Country */}
-      {/* <p className="mt-2 text-slate-500">
-                  {partner.country}
-                </p> */}
-
-      {/* Badge */}
-      {/* <div className="mt-5 inline-block bg-[#3F5C7A] text-white text-sm font-medium px-4 py-2 rounded-full">
-                  Official Academic Partner
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section> */}
-
       {/* Coaching Data */}
       <section id="courses" className="scroll-mt-16 py-10 bg-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -414,35 +355,8 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      < section className="py-10 bg-slate-50" >
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-
-          {/* Heading */}
-          <div className="text-center">
-
-            <h2 className="mt-4 text-4xl font-bold text-slate-900">
-              What Our Clients Say
-            </h2>
-
-            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-              Hear from students and professionals who trusted Keen Overseas
-              for their immigration journey.
-            </p>
-          </div>
-
-          {/* Testimonial Cards */}
-          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonialsData.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.id}
-                name={testimonial.name}
-                country={testimonial.country}
-                review={testimonial.review}
-              />
-            ))}
-          </div>
-        </div>
-      </section >
+      <Testimonials />
+      
 
       {/* FAQ Section */}
       <FaqSection />
