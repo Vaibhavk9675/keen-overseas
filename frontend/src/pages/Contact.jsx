@@ -1,8 +1,8 @@
 import ContactHero from "../components/Contact/ContactHero";
 import ContactInfoCards from "../components/Contact/ContactInfoCards";
-import ConsultationForm from "../components/ConsultationForm/ConsultationForm";
 import OfficeMap from "../components/Contact/OfficeMap";
 import ContactCTA from "../components/Contact/ContactCTA";
+import ContactForm from "../components/Contact/ContactForm";
 
 const Contact = () => {
   return (
@@ -16,7 +16,7 @@ const Contact = () => {
 
             <ContactInfoCards />
 
-            <ConsultationForm
+            <ContactForm
               title="Book Your FREE Consultation"
               subtitle="Complete the form below and our counselors will contact you shortly."
               showMessage={true}

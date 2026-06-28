@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import consultationData from "../../data/consultationData";
 
@@ -87,6 +88,67 @@ const ContactForm = ({
                     required
                     className="w-full border border-slate-300 rounded-2xl px-5 py-3 outline-none focus:border-[#AB2330]"
                 />
+
+                <label className="block mb-2 font-medium text-[#0B2E4A]">
+                    Interested Country
+                </label>
+
+                <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    className="w-full border border-slate-300 cursor-pointer rounded-2xl px-5 py-3 outline-none focus:border-[#AB2330]"
+                >
+                    <option value="">Interested Country</option>
+
+                    {consultationData.countries.map((country) => (
+                        <option
+                            key={country}
+                            value={country}
+                        >
+                            {country}
+                        </option>
+                    ))}
+
+                </select>
+
+                <label className="block mb-2 font-medium text-[#0B2E4A]">
+                    Preferred Intake
+                </label>
+
+                <select
+                    name="intake"
+                    value={formData.intake}
+                    onChange={handleChange}
+                    className="w-full border border-slate-300 cursor-pointer rounded-2xl px-5 py-3 outline-none focus:border-[#AB2330]"
+                >
+                    <option value="">Preferred Intake</option>
+
+                    {consultationData.intakes.map((intake) => (
+                        <option
+                            key={intake}
+                            value={intake}
+                        >
+                            {intake}
+                        </option>
+                    ))}
+
+                </select>
+
+                {showMessage && (
+                    <div>
+
+                        <label className="block mb-2 font-medium text-[#0B2E4A]">
+                            Additional Message
+                        </label>
+
+                        <textarea
+                            rows="5"
+                            placeholder="Tell us about your study plans..."
+                            className=" w-full rounded-2xl border border-slate-300 px-5 py-3 outline-none resize-none transition-all duration-300 focus:border-[#AB2330] focus:ring-4 focus:ring-[#AB2330]/10" />
+
+                    </div>
+                )}
 
                 <button
                     type="submit"
