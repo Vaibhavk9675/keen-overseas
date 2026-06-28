@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import logo from "../../assets/icons/logo.png";
@@ -14,13 +15,14 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Countries", path: "/countries" },
+    { name: "Programs", path: "/#courses" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#F6F4EF]/100 backdrop-blur-3xl border-b border-[#E6ECF2]">
+    <nav className="sticky h-16 top-0 z-50 bg-blue backdrop-blur-3xl">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+      <div className="max-w-7xl h-16 mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/">
@@ -33,25 +35,33 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 font-medium">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.name}
-              to={link.path}
-              onClick={() =>
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                })
-              }
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#C89B3C] font-semibold"
-                  : "text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
-              }
-            >
-              {link.name}
-            </NavLink>
-          ))}
+          {navLinks.map((link) =>
+            link.path.includes("#") ? (
+              <HashLink
+                key={link.name}
+                smooth
+                to={link.path}
+                onClick={() => setMenuOpen(false)}
+                className="block text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
+              >
+                {link.name}
+              </HashLink>
+            ) : (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                onClick={() =>
+                  window.scrollTo({ top: 0, behavior: "smooth", }) }
+                className={({ isActive }) =>
+                  isActive
+                    ? "block text-[#C89B3C] font-semibold"
+                    : "block text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
+                }
+              >
+                {link.name}
+              </NavLink>
+            )
+          )}
 
           <button
             onClick={toggleTheme}
@@ -86,7 +96,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white backdrop-blur-lg border-t border-white/10 px-6 py-5 space-y-5">
+        <div className="md:hidden bg-white border-t border-white/10 px-6 py-5 space-y-5">
 
           {navLinks.map((link) => (
             <NavLink

@@ -15,7 +15,7 @@ const CountryCard = ({
         className=" w-full h-full object-cover group-hover:scale-110 transition duration-500"/>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content */}
       <div className="absolute bottom-0 p-8 text-white w-full">

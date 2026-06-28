@@ -2,6 +2,7 @@ import {
   FaGraduationCap,
   FaPassport,
   FaBookOpen,
+  FaUsers,
   FaAward,
   FaFileAlt,
   FaPlaneDeparture,
@@ -18,10 +19,10 @@ const servicesPageData = [
 
   {
     id: 2,
-    icon: FaPassport,
-    title: "Student Visa Assistance",
+    icon: FaGraduationCap,
+    title: "Study Visa",
     description:
-      "End-to-end support for visa applications, documentation, and interview preparation.",
+      "Complete guidance for students applying to international universities and colleges.",
   },
 
   {
@@ -34,26 +35,26 @@ const servicesPageData = [
 
   {
     id: 4,
-    icon: FaAward,
-    title: "Scholarship Assistance",
+    icon: FaPassport,
+    title: "Job Seeker Visa",
     description:
-      "Guidance on scholarship opportunities and application support.",
+      "A trusted provider of work visa services, offering personalized solutions and expert guidance",
   },
 
   {
     id: 5,
-    icon: FaFileAlt,
-    title: "Documentation Support",
+    icon: FaUsers,
+    title: "Family Visa",
     description:
-      "SOP writing, financial documents, resume preparation, and application review.",
+      "We provide reliable family visa services, helping families reunite and stay together.",
   },
 
   {
     id: 6,
     icon: FaPlaneDeparture,
-    title: "Pre-Departure Support",
+    title: "Tourist Visa",
     description:
-      "Travel guidance, accommodation support, and orientation sessions.",
+      "Fast and reliable tourist visa processing for global travel destinations.",
   },
 ];
 
