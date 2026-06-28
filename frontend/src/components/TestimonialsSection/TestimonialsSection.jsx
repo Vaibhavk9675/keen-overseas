@@ -14,7 +14,7 @@ import TestimonialCard from "../TestimonialCard/TestimonialCard";
 
 const TestimonialsSection = () => {
     return (
-        <section className="py-10 bg-slate-50">
+        <section className="py-10 bg-slate-50 dark:bg-[#0B1220] transition-colors duration-300">
 
             <div className="max-w-7xl mx-auto px-6 md:px-12">
 
@@ -22,15 +22,15 @@ const TestimonialsSection = () => {
 
                 <div className="text-center mb-14">
 
-                    <span className="text-[#AB2330] uppercase tracking-widest font-semibold">
+                    <span className="text-yellow-500 uppercase tracking-widest font-semibold">
                         Success Stories
                     </span>
 
-                    <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[#0B2E4A]">
+                    <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[#0B2E4A] dark:text-white transition-colors duration-300">
                         Student Testimonials
                     </h2>
 
-                    <p className="mt-5 max-w-3xl mx-auto text-slate-600 text-lg leading-8">
+                    <p className="mt-5 max-w-3xl mx-auto text-slate-600 text-lg leading-8 dark:text-white transition-colors duration-300">
                         Every visa approval represents someone's dream becoming reality.
                         Here's what our students have to say about their journey with
                         Keen Overseas.

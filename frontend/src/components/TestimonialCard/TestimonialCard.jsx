@@ -10,7 +10,7 @@ const TestimonialCard = ({
   return (
     <div
       className="
-      bg-white border border-[#E6ECF2] rounded-3xl overflow-hidden transition-all duration-300  hover:shadow-xl hover:border-slate-100 ">
+      bg-white border border-[#E6ECF2] dark:border-slate-700 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-slate-100  dark:bg-slate-800 dark:hover:border-slate-800 ">
       {/* Visa Image */}
 
       <div className="overflow-hidden">
@@ -34,7 +34,7 @@ const TestimonialCard = ({
 
         {/* Feedback */}
 
-        <p className="text-slate-600 italic leading-7 text-center">
+        <p className="text-slate-600 italic dark:text-slate-300 leading-7 text-center">
           "{feedback}"
         </p>
 
@@ -44,13 +44,13 @@ const TestimonialCard = ({
 
         {/* Name */}
 
-        <h3 className="text-xl font-bold text-[#0B2E4A] text-center">
+        <h3 className="text-xl font-bold text-[#0B2E4A] text-center dark:text-white">
           {name}
         </h3>
 
         {/* Country */}
 
-        <p className="mt-2 text-center text-[#AB2330] font-medium">
+        <p className="mt-2 text-center text-[#AB2330] dark:text-[#C89B3C] font-medium">
           {country}
         </p>
 

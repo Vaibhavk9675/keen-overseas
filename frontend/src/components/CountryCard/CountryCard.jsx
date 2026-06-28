@@ -30,7 +30,7 @@ const CountryCard = ({
 
         <button
           onClick={onLearnMore}
-          className=" mt-5 w-full bg-[#AB2330] cursor-pointer hover:bg-[#941F2A] text-white font-semibold py-3 rounded-xl transition duration-300">
+          className=" mt-5 w-full bg-[#AB2330] dark:bg-[#C89B3C] cursor-pointer hover:bg-[#941F2A] dark:hover:bg-yellow-500 text-white dark:text-[#0B2E4A] font-semibold py-3 rounded-xl transition duration-300">
           {buttonText}
         </button>
 

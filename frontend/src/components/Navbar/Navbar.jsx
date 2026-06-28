@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky h-16 top-0 z-50 bg-blue backdrop-blur-3xl">
+    <nav className="sticky top-0 z-50 bg-blue dark:bg-[#0F172A]/95 backdrop-blur-md border-b border-none dark:border-slate-700 transition-colors duration-300">
 
       <div className="max-w-7xl h-16 mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
 
@@ -42,8 +42,7 @@ const Navbar = () => {
                 smooth
                 to={link.path}
                 onClick={() => setMenuOpen(false)}
-                className="block text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
-              >
+                className="block text-[#0B2E4A] dark:text-slate-200 hover:text-[#C89B3C] transition duration-300">
                 {link.name}
               </HashLink>
             ) : (
@@ -55,7 +54,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "block text-[#C89B3C] font-semibold"
-                    : "block text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
+                    : "block text-[#0B2E4A] dark:text-slate-200 hover:text-[#C89B3C] transition duration-300"
                 }
               >
                 {link.name}
@@ -65,13 +64,13 @@ const Navbar = () => {
 
           <button
             onClick={toggleTheme}
-            className=" w-11 h-11 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] hover:bg-slate-100 transition-all duration-300">
-            {darkMode ? <FiSun /> : <FiMoon />}
+            className=" w-11 h-11 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] dark:text-white hover:bg-slate-100 dark:hover:bg-[#0B2E4A] transition-all duration-300">
+            {darkMode ? <FiSun /> : <FiMoon />} 
           </button>
 
           <Link
             to="/contact"
-            className="bg-[#0B2E4A] hover:bg-[#3F5C7A] text-white px-5 py-2 rounded-lg font-semibold transition duration-300 shadow-sm"
+            className="bg-[#0B2E4A] dark:bg-[#C89B3C] hover:bg-[#3F5C7A] dark:hover:bg-yellow-500 text-white dark:text-[#0B2E4A] px-5 py-2 rounded-lg font-semibold transition duration-300 shadow-sm"
           >
             Free Consultation
           </Link>
@@ -80,7 +79,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-3xl text-[#0B2E4A]"
+          className="md:hidden text-3xl text-[#0B2E4A] dark:text-white"
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -96,7 +95,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-white/10 px-6 py-5 space-y-5">
+        <div className="md:hidden bg-white dark:bg-[#111827] backdrop-blur-lg border-t border-slate-200 dark:border-slate-700 px-6 py-5 space-y-5 transition-colors duration-300">
 
           {navLinks.map((link) => (
             <NavLink
@@ -106,7 +105,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "block text-[#C89B3C] font-semibold"
-                  : "block text-[#0B2E4A] hover:text-[#C89B3C] transition duration-300"
+                  : "block text-[#0B2E4A] dark:text-slate-200 hover:text-[#C89B3C] transition duration-300"
               }
             >
               {link.name}
@@ -115,7 +114,7 @@ const Navbar = () => {
 
           <button
             onClick={toggleTheme}
-            className=" w-full flex items-center justify-center \ gap-3 py-3 rounded-lg border border-slate-200 text-[#0B2E4A] transition">
+            className="w-full flex items-center justify-center \ gap-3 text-center bg-[#0B2E4A] dark:bg-[#C89B3C] hover:bg-[#3F5C7A] dark:hover:bg-yellow-500 text-white dark:text-[#0B2E4A] font-semibold py-3 rounded-lg transition duration-300">
             {darkMode ? <FiSun /> : <FiMoon />}
             {darkMode ? "Light Mode" : "Dark Mode"}
           </button>

@@ -124,7 +124,7 @@ const Home = () => {
                   <div className="max-w-4xl">
 
                     <motion.h1
-                      className="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+                      className="text-[#E6ECF2] dark:text-slate-300 transition-colors duration-300 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
@@ -135,7 +135,7 @@ const Home = () => {
                     </motion.h1>
 
                     <motion.p
-                      className="mt-6 text-lg md:text-xl text-[#E6ECF2] max-w-2xl mx-auto leading-relaxed"
+                      className="mt-6 text-lg md:text-xl text-[#E6ECF2] dark:text-slate-300  transition-colors duration-300 max-w-2xl mx-auto leading-relaxed"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.4 }}
@@ -152,14 +152,14 @@ const Home = () => {
                     >
                       <Link
                         to="/contact"
-                        className="bg-[#AB2330] hover:bg-[#921E29] text-white font-semibold px-8 py-4 rounded-xl shadow-xl transition duration-300"
+                        className="bg-[#AB2330] dark:bg-[#C89B3C] hover:bg-[#921E29] dark:hover:bg-yellow-500 text-[#E6ECF2] dark:text-[#0B2E4A] font-semibold px-8 py-4 rounded-xl shadow-xl transition duration-300"
                       >
                         Book Free Consultation
                       </Link>
 
                       <Link
                         to="/countries"
-                        className="border-2 border-white text-white hover:bg-white hover:text-[#0B2E4A] font-semibold px-8 py-4 rounded-xl transition duration-300"
+                        className="border-2 border-white dark:border-[#C89B3C] text-[#E6ECF2] dark:text-[#0B2E4A] hover:bg-white dark:hover:bg-[#C89B3C] hover:text-[#0B2E4A] dark:text-yellow-500 font-semibold px-8 py-4 rounded-xl transition duration-300"
                       >
                         Explore Destinations
                       </Link>
@@ -176,47 +176,47 @@ const Home = () => {
       </section>
 
       {/* Stats Strip */}
-      <section className="py-10 bg-slate-100">
+      <section className="py-10 bg-slate-100 dark:bg-[#0F172A] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
 
             <div>
-              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A]">
+              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A] dark:text-slate-200 transition-colors duration-300">
                 <AnimatedCounter end={512} suffix="+" />
               </h2>
 
-              <p className="mt-2 text-black text-sm md:text-base">
+              <p className="mt-2 text-black text-sm md:text-base dark:text-slate-300 transition-colors duration-300">
                 Universities
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A]">
+              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A] dark:text-slate-200 transition-colors duration-300">
                 <AnimatedCounter end={14} suffix="+" />
               </h2>
 
-              <p className="mt-2 text-black text-sm md:text-base">
+              <p className="mt-2 text-black text-sm md:text-base dark:text-slate-300 transition-colors duration-300">
                 Years Experience
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A]">
+              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A] dark:text-slate-200 transition-colors duration-300">
                 <AnimatedCounter end={92} suffix="%" />
               </h2>
 
-              <p className="mt-2 text-black text-sm md:text-base">
+              <p className="mt-2 text-black text-sm md:text-base dark:text-slate-300 transition-colors duration-300">
                 Visa Success Rate
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A]">
+              <h2 className="text-2xl md:text-5xl font-bold text-[#0B2E4A] dark:text-slate-200 transition-colors duration-300">
                 <AnimatedCounter end={1000} suffix="+" />
               </h2>
 
-              <p className="mt-2 text-black text-sm md:text-base">
+              <p className="mt-2 text-black text-sm md:text-base dark:text-slate-300 transition-colors duration-300">
                 Students Selected
               </p>
             </div>
@@ -229,7 +229,7 @@ const Home = () => {
       <ConsultationSection />
 
       {/* Why Choose Us */}
-      < section className="py-10 bg-slate-100" >
+      < section className="py-10 bg-slate-100 dark:bg-[#0F172A] transition-colors duration-300" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Heading */}
@@ -240,11 +240,11 @@ const Home = () => {
             </span>
 
 
-            <h2 className="mt-4 text-4xl font-bold text-black">
+            <h2 className="mt-4 text-4xl font-bold text-black dark:text-white transition-colors duration-300">
               Trusted Immigration Experts
             </h2>
 
-            <p className="mt-4 text-black max-w-2xl mx-auto">
+            <p className="mt-4 text-black dark:text-white transition-colors duration-300 max-w-2xl mx-auto">
               We simplify the immigration journey with expert guidance,
               transparent processes, and dedicated support.
             </p>
@@ -265,7 +265,7 @@ const Home = () => {
       </section >
 
       {/* Countries Section */}
-      < section className="py-10 bg-slate-50" >
+      < section className="py-10 bg-slate-50 dark:bg-[#0B1220] transition-colors duration-300" >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Heading */}
@@ -275,11 +275,11 @@ const Home = () => {
               Study Destinations
             </span>
 
-            <h2 className="mt-4 text-4xl font-bold text-slate-900">
+            <h2 className="mt-4 text-4xl font-bold text-slate-900 dark:text-white transition-colors duration-300">
               Explore Opportunities Worldwide
             </h2>
 
-            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto dark:text-white transition-colors duration-300">
               Discover top countries offering world-class education,
               career growth, and immigration opportunities.
             </p>
@@ -302,7 +302,7 @@ const Home = () => {
         <div className="mt-12 text-center">
           <button
             onClick={() => setShowAllCountries(!showAllCountries)}
-            className=" bg-[#AB2330] hover:bg-[#941F2A] inline-flex items-center gap-2 text-white font-semibold cursor-pointer px-8 py-4 rounded-xl transition duration-300">
+            className=" bg-[#AB2330] dark:bg-[#C89B3C] hover:bg-[#941F2A] dark:hover:bg-yellow-500 inline-flex items-center gap-2 text-white dark:text-[#0B2E4A] font-semibold cursor-pointer px-8 py-4 rounded-xl transition duration-300">
             {showAllCountries
               ? "Show Less"
               : "Explore More"}
@@ -315,7 +315,7 @@ const Home = () => {
       </section >
 
       {/* Coaching Data */}
-      <section id="courses" className="scroll-mt-16 py-10 bg-slate-100">
+      <section id="courses" className="scroll-mt-16 py-10 bg-slate-100 dark:bg-[#0F172A] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="text-center">
@@ -324,11 +324,11 @@ const Home = () => {
               Coaching Programs
             </span>
 
-            <h2 className="mt-4 text-4xl font-bold text-[#0B2E4A]">
+            <h2 className="mt-4 text-4xl font-bold text-[#0B2E4A] dark:text-white transition-colors duration-300">
               Prepare for Success
             </h2>
 
-            <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
+            <p className="mt-4 text-slate-600 max-w-3xl mx-auto dark:text-white transition-colors duration-300">
               Achieve your target scores with expert coaching designed to help you study abroad with confidence.
             </p>
 
