@@ -64,7 +64,7 @@ const Navbar = () => {
 
           <button
             onClick={toggleTheme}
-            className=" w-11 h-11 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] dark:text-white hover:bg-slate-100 dark:hover:bg-[#0B2E4A] transition-all duration-300">
+            className=" w-11 h-11 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] dark:text-white dark:border-[#0B2E4A] hover:bg-slate-100 dark:hover:bg-[#0B2E4A] transition-all duration-300">
             {darkMode ? <FiSun /> : <FiMoon />} 
           </button>
 
