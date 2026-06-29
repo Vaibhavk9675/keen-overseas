@@ -21,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-[#0F172A]/95 border-b bg-background/95 dark:border-slate-700 transition-colors duration-300">
+    <nav className="sticky top-0 z-50 backdrop-blur text-sm supports-[backdrop-filter]:bg-background/250 dark:bg-[#0F172A]/95 border-b border-slate-200 dark:border-slate-700 transition-colors duration-300">
 
 
       <div className="max-w-7xl h-16 mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
@@ -69,7 +69,7 @@ const Navbar = () => {
 
           <button
             onClick={toggleTheme}
-            className=" w-9 h-9 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] dark:text-white dark:border-[#0B2E4A] hover:bg-slate-100 dark:hover:bg-[#0B2E4A] transition-all duration-300">
+            className=" w-9 h-9 rounded-full cursor-pointer flex items-center justify-center text-lg text-black dark:text-white dark:border-[#0B2E4A] hover:bg-[#0B2E4A] hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300">
             {darkMode ? <FiSun /> : <FiMoon />}
           </button>
 
