@@ -145,16 +145,9 @@ const Footer = () => {
             </div>
 
             <div className="inline-flex items-center gap-2">
-              {/* <a
-                href="https://wa.me/916398610995"
-                target="_blank"
-                rel="noreferrer"
-                className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
-                <FaWhatsapp className="text-2xl"/>
-              </a> */}
 
               <a
-                href="https://wa.me/916398610995"
+                href="https://www.facebook.com/profile.php?id=100093547092612"
                 target="_blank"
                 rel="noreferrer"
                 className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
@@ -162,7 +155,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://wa.me/916398610995"
+                href="https://www.instagram.com/keenoverseas"
                 target="_blank"
                 rel="noreferrer"
                 className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
@@ -170,7 +163,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://wa.me/916398610995"
+                href=""
                 target="_blank"
                 rel="noreferrer"
                 className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">
@@ -178,7 +171,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://wa.me/916398610995"
+                href=""
                 target="_blank"
                 rel="noreferrer"
                 className=" inline-flex items-center gap-2 mt-6 bg-[#2B475E] hover:bg-[#AB2330] px-2 py-2 rounded-xl font-medium transition">

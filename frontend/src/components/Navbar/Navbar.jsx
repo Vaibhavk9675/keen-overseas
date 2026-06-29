@@ -13,17 +13,18 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "Programs", path: "/#courses" },
     { name: "Services", path: "/services" },
     { name: "Countries", path: "/countries" },
-    { name: "Programs", path: "/#courses" },
     { name: "Contact", path: "/contact" },
+    { name: "Blogs", path: "/contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-blue dark:bg-[#0F172A]/95 backdrop-blur-md border-b border-none dark:border-slate-700 transition-colors duration-300">
+    <nav className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-[#0F172A]/95 border-b bg-background/95 dark:border-slate-700 transition-colors duration-300">
+
 
       <div className="max-w-7xl h-16 mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-
         {/* Logo */}
         <Link to="/">
           <img
@@ -50,7 +51,7 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 onClick={() =>
-                  window.scrollTo({ top: 0, behavior: "smooth", }) }
+                  window.scrollTo({ top: 0, behavior: "smooth", })}
                 className={({ isActive }) =>
                   isActive
                     ? "block text-[#C89B3C] font-semibold"
@@ -62,40 +63,45 @@ const Navbar = () => {
             )
           )}
 
+        </div>
+
+        <div class="flex items-center gap-4">
+
           <button
             onClick={toggleTheme}
-            className=" w-11 h-11 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] dark:text-white dark:border-[#0B2E4A] hover:bg-slate-100 dark:hover:bg-[#0B2E4A] transition-all duration-300">
-            {darkMode ? <FiSun /> : <FiMoon />} 
+            className=" w-9 h-9 rounded-full border border-slate-200 cursor-pointer flex items-center justify-center text-xl text-[#0B2E4A] dark:text-white dark:border-[#0B2E4A] hover:bg-slate-100 dark:hover:bg-[#0B2E4A] transition-all duration-300">
+            {darkMode ? <FiSun /> : <FiMoon />}
           </button>
 
           <Link
             to="/contact"
-            className="bg-[#0B2E4A] dark:bg-[#C89B3C] hover:bg-[#3F5C7A] dark:hover:bg-yellow-500 text-white dark:text-[#0B2E4A] px-5 py-2 rounded-lg font-semibold transition duration-300 shadow-sm"
+            className="hidden md:flex bg-[#0B2E4A] dark:bg-[#C89B3C] hover:bg-[#3F5C7A] dark:hover:bg-yellow-500 text-white dark:text-[#0B2E4A] px-5 py-2 rounded-lg font-semibold transition duration-300 shadow-sm"
           >
             Free Consultation
           </Link>
 
+          {/* Mobile Menu Button */}
+
+          <button
+            className="md:hidden text-3xl text-[#0B2E4A] dark:text-white"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+
+              setMenuOpen(!menuOpen);
+            }}
+          >
+            {menuOpen ? <HiX /> : <HiMenu />}
+          </button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-3xl text-[#0B2E4A] dark:text-white"
-          onClick={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-
-            setMenuOpen(!menuOpen);
-          }}
-        >
-          {menuOpen ? <HiX /> : <HiMenu />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-[#111827] backdrop-blur-lg border-t border-slate-200 dark:border-slate-700 px-6 py-5 space-y-5 transition-colors duration-300">
+        <div className="md:hidden dark:bg-[#111827] backdrop-blur supports-[backdrop-filter]:bg-background/100 border-t border-slate-200 dark:border-slate-700 px-6 py-5 space-y-5 transition-colors duration-300">
+
 
           {navLinks.map((link) => (
             <NavLink
@@ -112,12 +118,13 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="w-full flex items-center justify-center \ gap-3 text-center bg-[#0B2E4A] dark:bg-[#C89B3C] hover:bg-[#3F5C7A] dark:hover:bg-yellow-500 text-white dark:text-[#0B2E4A] font-semibold py-3 rounded-lg transition duration-300">
             {darkMode ? <FiSun /> : <FiMoon />}
             {darkMode ? "Light Mode" : "Dark Mode"}
-          </button>
+          </button> */}
+
 
           <Link
             to="/contact"
