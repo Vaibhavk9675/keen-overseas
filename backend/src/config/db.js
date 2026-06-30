@@ -1,15 +1,21 @@
 import mongoose from "mongoose";
+import env from "./env.js";
+import logger from "../utils/logger.js";
 
 const connectDB = async () => {
   try {
-    console.log("Connecting to MongoDB...");
-    console.log("URI length:", process.env.MONGO_URI?.length);
+    const conn = await mongoose.connect(env.MONGO_URI, {
+      dbName: "keen-overseas",
+    });
 
-    await mongoose.connect(process.env.MONGO_URI);
+    logger.success("MongoDB Connected");
+    logger.info(`Database : ${conn.connection.name}`);
+    logger.info(`Host : ${conn.connection.host}`);
 
-    console.log("MongoDB Connected");
   } catch (error) {
-    console.log("DB ERROR:", error.message);
+    console.error("❌ MongoDB Connection Failed");
+    logger.error(error.message);
+
     process.exit(1);
   }
 };

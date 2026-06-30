@@ -1,16 +1,9 @@
 import express from "express";
-
-import {
-  submitContactForm,
-} from "../controllers/contactController.js";
-
-console.log("🔥 CONTACT ROUTES FILE LOADED");
+import { submitContact } from "../controllers/contactController.js";
+import validateContact from "../middleware/validateContact.js";
 
 const router = express.Router();
 
-router.post(
-  "/contact",
-  submitContactForm
-);
+router.post("/", validateContact, submitContact);
 
 export default router;

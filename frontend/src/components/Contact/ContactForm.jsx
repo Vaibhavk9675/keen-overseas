@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import consultationData from "../../data/consultationData";
+import api from "../../services/api";
 
 const ContactForm = ({
     title = "Book Your FREE Consultation",
@@ -12,9 +13,14 @@ const ContactForm = ({
         fullName: "",
         phone: "",
         email: "",
-        country: "",
-        intake: "",
+        preferredCountry: "",
+        preferredIntake: "",
+        message: "",
     });
+
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState("");
+    const [error, setError] = useState("");
 
     const handleChange = (e) => {
         setFormData({
@@ -23,12 +29,42 @@ const ContactForm = ({
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(formData);
+        setLoading(true);
+        setSuccess("");
+        setError("");
 
-        alert("Form Submitted Successfully!");
+        try {
+            await api.submitContact({
+                name: formData.fullName,
+                email: formData.email,
+                phone: formData.phone,
+                preferredCountry: formData.preferredCountry,
+                preferredIntake: formData.preferredIntake,
+                message: formData.message,
+                source: showMessage ? "Contact" : "Home",
+            });
+
+            setSuccess(
+                "Your consultation request has been submitted successfully! Our counsellor will contact you within 24 hours."
+            );
+
+            setFormData({
+                fullName: "",
+                phone: "",
+                email: "",
+                preferredCountry: "",
+                preferredIntake: "",
+                message: "",
+            });
+
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -135,8 +171,8 @@ const ContactForm = ({
                         </label>
 
                         <select
-                            name="country"
-                            value={formData.country}
+                            name="preferredCountry"
+                            value={formData.preferredCountry}
                             onChange={handleChange}
                             className="w-full rounded-2xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-5 py-3 text-[#0B2E4A] dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-[#C89B3C] focus:ring-4 focus:ring-[#C89B3C]/20 focus:shadow-lg focus:shadow-[#C89B3C]/10 hover:border-[#C89B3C]/40"
                         >
@@ -158,8 +194,8 @@ const ContactForm = ({
                         </label>
 
                         <select
-                            name="intake"
-                            value={formData.intake}
+                            name="preferredIntake"
+                            value={formData.preferredIntake}
                             onChange={handleChange}
                             className="w-full rounded-2xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-5 py-3 text-[#0B2E4A] dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-[#C89B3C] focus:ring-4 focus:ring-[#C89B3C]/20 focus:shadow-lg focus:shadow-[#C89B3C]/10 hover:border-[#C89B3C]/40"
                         >
@@ -184,10 +220,26 @@ const ContactForm = ({
                                 </label>
 
                                 <textarea
+                                    name="message"
                                     rows="5"
                                     placeholder="Tell us about your study plans..."
-                                    className="w-full rounded-2xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-5 py-3 text-[#0B2E4A] dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-[#C89B3C] focus:ring-4 focus:ring-[#C89B3C]/20 focus:shadow-lg focus:shadow-[#C89B3C]/10 hover:border-[#C89B3C]/40" />
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    className="w-full rounded-2xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-5 py-3 text-[#0B2E4A] dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-[#C89B3C] focus:ring-4 focus:ring-[#C89B3C]/20 focus:shadow-lg focus:shadow-[#C89B3C]/10 hover:border-[#C89B3C]/40"
+                                />
 
+                            </div>
+                        )}
+
+                        {error && (
+                            <div className="rounded-xl border border-red-200 bg-red-50 text-red-700 px-4 py-3 text-sm">
+                                {error}
+                            </div>
+                        )}
+
+                        {success && (
+                            <div className="rounded-xl border border-green-200 bg-green-50 text-green-700 px-4 py-3 text-sm">
+                                {success}
                             </div>
                         )}
 
@@ -197,11 +249,12 @@ const ContactForm = ({
                         >
                             <>
                                 <span className="relative z-10">
-                                    {consultationData.buttonText}
+                                    {loading ? "Submitting..." : consultationData.buttonText}
                                 </span>
 
                                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:translate-x-full transition-transform duration-1000"></span>
                             </>
+
                         </button>
 
                         <div className="mt-1 text-center">

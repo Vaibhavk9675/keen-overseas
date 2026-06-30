@@ -1,5 +1,6 @@
 import { useState } from "react";
 import consultationData from "../../data/consultationData";
+import api from "../../services/api";
 
 const ConsultationForm = ({
     title = "Book Your FREE Consultation",
@@ -11,9 +12,11 @@ const ConsultationForm = ({
         fullName: "",
         phone: "",
         email: "",
-        country: "",
-        intake: "",
     });
+
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState("");
+    const [error, setError] = useState("");
 
     const handleChange = (e) => {
         setFormData({
@@ -22,14 +25,37 @@ const ConsultationForm = ({
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(formData);
+        setLoading(true);
+        setSuccess("");
+        setError("");
 
-        alert("Form Submitted Successfully!");
+        try {
+            await api.submitContact({
+                name: formData.fullName,
+                email: formData.email,
+                phone: formData.phone,
+                source: "Home",
+            });
+
+            setSuccess(
+                "Your consultation request has been submitted successfully! Our counsellor will contact you shortly."
+            );
+
+            setFormData({
+                fullName: "",
+                phone: "",
+                email: "",
+            });
+
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
     };
-
     return (
         <div className="relative">
 
@@ -129,13 +155,25 @@ const ConsultationForm = ({
                             className="w-full rounded-2xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-5 py-3 text-[#0B2E4A] dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-[#C89B3C] focus:ring-4 focus:ring-[#C89B3C]/20 focus:shadow-lg focus:shadow-[#C89B3C]/10 hover:border-[#C89B3C]/40"
                         />
 
+                        {error && (
+                            <div className="mb-4 rounded-xl border border-red-200 bg-red-50 text-red-700 px-4 py-3 text-sm">
+                                {error}
+                            </div>
+                        )}
+
+                        {success && (
+                            <div className="mb-4 rounded-xl border border-green-200 bg-green-50 text-green-700 px-4 py-3 text-sm">
+                                {success}
+                            </div>
+                        )}
+
                         <button
                             type="submit"
                             className="group relative cursor-pointer overflow-hidden w-full bg-gradient-to-r from-[#AB2330] to-[#C43846] dark:from-[#C89B3C] dark:to-[#D6AF56] text-white dark:text-[#0B2E4A] py-5 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#AB2330]/20 active:scale-[0.98]"
                         >
                             <>
                                 <span className="relative z-10">
-                                    {consultationData.buttonText}
+                                    {loading ? "Submitting..." : consultationData.buttonText}
                                 </span>
 
                                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:translate-x-full transition-transform duration-1000"></span>

@@ -109,7 +109,7 @@ const Contact = () => {
             <div className="relative flex flex-col justify-center h-full lg:pl-12">
 
               {/* Heading */}
-              <span className="text-[#AB2330] uppercase tracking-[3px] text-sm font-semibold">
+              <span className="text-yellow-500 uppercase tracking-[3px] text-sm font-semibold">
                 Contact Information
               </span>
 
@@ -187,7 +187,7 @@ const Contact = () => {
 
                   <a
                     href="tel:+9190846 82939"
-                    className="mt-2 block text-[#AB2330] font-medium hover:underline"
+                    className="mt-2 text-[#AB2330] font-medium hover:underline"
                   >
                     +91 90846 82939
                   </a>
@@ -266,21 +266,6 @@ const Contact = () => {
                 </div>
 
               </div>
-
-              {/* CTA */}
-
-              <a
-                href="https://maps.app.goo.gl/EtNAzLJQLHqNFH6Y8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-12 inline-flex items-center gap-3 w-fit bg-[#AB2330] hover:bg-[#8F1E29] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-1 dark:bg-[#C89B3C] dark:text-[#0B2E4A] dark:hover:bg-yellow-500"
-              >
-
-                Get Directions
-
-                <span>→</span>
-
-              </a>
 
             </div>
 

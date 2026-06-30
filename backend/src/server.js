@@ -1,42 +1,18 @@
-import dotenv from "dotenv";
-dotenv.config();
-
-import express from "express";
-import cors from "cors";
-
-import contactRoutes from "./routes/contactRoutes.js";
+import app from "./app.js";
 import connectDB from "./config/db.js";
+import env from "./config/env.js";
 
-console.log("🔥 SERVER STARTED");
+const startServer = async () => {
+  await connectDB();
 
-dotenv.config();
+  app.listen(env.PORT, () => {
+    console.log("");
+    console.log("==================================");
+    console.log("🚀 Server Running");
+    console.log(`🌍 http://localhost:${env.PORT}`);
+    console.log(`🛠 Environment : ${env.NODE_ENV}`);
+    console.log("==================================");
+  });
+};
 
-const app = express();
-
-// DB connect MUST happen first
-connectDB();
-
-app.use(
-  cors({
-    origin: "https://keen-overseas.vercel.app",
-    methods: ["GET", "POST"],
-  })
-);
-app.use(express.json());
-
-app.use("/api", contactRoutes);
-
-app.get("/", (req, res) => {
-  res.send("Backend running successfully");
-});
-
-app.get("/api/test", (req, res) => {
-  res.json({ ok: true });
-});
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
+startServer();

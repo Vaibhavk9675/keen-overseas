@@ -9,7 +9,7 @@ const ContactHero = () => {
                 {/* Heading */}
                 <div className="text-center">
 
-                    <span className="text-[#AB2330] font-semibold uppercase tracking-wider dark:text-white">
+                    <span className="text-[#AB2330] font-semibold uppercase tracking-wider dark:text-yellow-500">
                         {contactData.hero.badge}
                     </span>
 
