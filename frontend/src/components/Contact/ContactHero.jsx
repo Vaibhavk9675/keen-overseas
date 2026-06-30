@@ -2,22 +2,22 @@ import contactData from "../../data/contactData";
 
 const ContactHero = () => {
     return (
-        <section className="bg-[#F8FAFC] border-b border-slate-200">
+        <section className="bg-slate-50 dark:bg-[#0B1220] border-b border-slate-200 dark:border-slate-700">
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 py-14">
 
                 {/* Heading */}
                 <div className="text-center">
 
-                    <span className="text-[#AB2330] font-semibold uppercase tracking-wider">
+                    <span className="text-[#AB2330] font-semibold uppercase tracking-wider dark:text-white">
                         {contactData.hero.badge}
                     </span>
 
-                    <h1 className="mt-4 text-4xl md:text-5xl font-bold text-[#0B2E4A] leading-tight">
+                    <h1 className="mt-4 text-4xl md:text-5xl font-bold text-[#0B2E4A] leading-tight dark:text-white">
                         {contactData.hero.heading}
                     </h1>
 
-                    <p className="mt-5 max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
+                    <p className="mt-5 max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed dark:text-white">
                         {contactData.hero.description}
                     </p>
 

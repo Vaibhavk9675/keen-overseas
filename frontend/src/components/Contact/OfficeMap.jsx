@@ -8,7 +8,7 @@ import {
 
 const OfficeMap = () => {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-slate-50 dark:bg-[#0B1220]">
 
             <div className="max-w-7xl mx-auto px-6 md:px-12">
 
@@ -16,15 +16,15 @@ const OfficeMap = () => {
 
                 <div className="text-center">
 
-                    <span className="text-[#AB2330] uppercase tracking-wider font-semibold">
+                    <span className="text-[#AB2330] uppercase tracking-wider font-semibold dark:text-yellow-500">
                         Visit Our Office
                     </span>
 
-                    <h2 className="mt-4 text-4xl font-bold text-[#0B2E4A]">
+                    <h2 className="mt-4 text-4xl font-bold text-[#0B2E4A] dark:text-white">
                         Let's Meet In Person
                     </h2>
 
-                    <p className="mt-5 text-slate-600 text-lg max-w-3xl mx-auto">
+                    <p className="mt-5 text-slate-600 text-lg max-w-3xl mx-auto dark:text-white">
                         Prefer face-to-face guidance? Visit our office and speak directly
                         with our experienced counselors.
                     </p>
@@ -60,13 +60,13 @@ const OfficeMap = () => {
 
                     <div className="lg:col-span-2">
 
-                        <div className="bg-[#F8FAFC] border border-slate-200 rounded-[32px] p-10 shadow-xl h-full flex flex-col">
+                        <div className="bg-[#F8FAFC] border border-slate-200 rounded-[32px] p-10 shadow-xl h-full flex flex-col border-white/60 dark:border-slate-700 bg-white/95 dark:bg-slate-800/95 backdrop-blur-xl shadow-[0_30px_60px_rgba(15,23,42,.15)] dark:shadow-black/40 transition-all duration-300">
 
-                            <h3 className="text-3xl font-bold text-[#0B2E4A]">
+                            <h3 className="text-3xl dark:text-white font-bold text-[#0B2E4A]">
                                 Keen Overseas
                             </h3>
 
-                            <p className="mt-3 text-slate-600 leading-relaxed">
+                            <p className="mt-3 text-slate-600 dark:text-white leading-relaxed">
                                 Visit our office for personalized counseling and expert
                                 guidance regarding study abroad, visas, and admissions.
                             </p>
@@ -77,17 +77,17 @@ const OfficeMap = () => {
 
                                 <div className="flex gap-4">
 
-                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 flex items-center justify-center text-[#AB2330] text-xl">
+                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 dark:bg-[#C89B3C]/10 dark:text-slate-200 flex items-center justify-center text-[#AB2330]  text-xl">
                                         <FaMapMarkerAlt />
                                     </div>
 
                                     <div>
 
-                                        <h4 className="font-semibold text-[#0B2E4A]">
+                                        <h4 className="font-semibold dark:text-slate-200 text-[#0B2E4A]">
                                             Office Address
                                         </h4>
 
-                                        <p className="text-slate-600 mt-1">
+                                        <p className="text-slate-600 dark:text-slate-200 mt-1">
                                            Second Floor, Raj Plaza, 207,<br /> Dilaram Chowk, Rajpur Rd,<br />Dehradun, Uttarakhand 248001
                                         </p>
 
@@ -99,21 +99,21 @@ const OfficeMap = () => {
 
                                 <div className="flex gap-4">
 
-                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 flex items-center justify-center text-[#AB2330] text-xl">
+                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 dark:bg-[#C89B3C]/10 dark:text-slate-200 flex items-center justify-center text-[#AB2330] text-xl">
                                         <FaPhoneAlt />
                                     </div>
 
                                     <div>
 
-                                        <h4 className="font-semibold text-[#0B2E4A]">
+                                        <h4 className="font-semibold text-[#0B2E4A] dark:text-slate-200">
                                             Phone
                                         </h4>
 
                                         <a
-                                            href="tel:+91XXXXXXXXXX"
-                                            className="text-slate-600 hover:text-[#AB2330]"
+                                            href="tel:+9190846 82939"
+                                            className="text-[#AB2330] hover:underline"
                                         >
-                                            +91 XXXXX XXXXX
+                                            +91 90846 82939
                                         </a>
 
                                     </div>
@@ -124,19 +124,19 @@ const OfficeMap = () => {
 
                                 <div className="flex gap-4">
 
-                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 flex items-center justify-center text-[#AB2330] text-xl">
+                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 dark:bg-[#C89B3C]/10 dark:text-slate-300 flex items-center justify-center text-[#AB2330] text-xl">
                                         <FaEnvelope />
                                     </div>
 
                                     <div>
 
-                                        <h4 className="font-semibold text-[#0B2E4A]">
+                                        <h4 className="font-semibold text-[#0B2E4A] dark:text-slate-200">
                                             Email
                                         </h4>
 
                                         <a
                                             href="mailto:info@keenoverseas.com"
-                                            className="text-slate-600 hover:text-[#AB2330]"
+                                            className="text-[#AB2330] hover:underline"
                                         >
                                             info@keenoverseas.com
                                         </a>
@@ -149,17 +149,17 @@ const OfficeMap = () => {
 
                                 <div className="flex gap-4">
 
-                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 flex items-center justify-center text-[#AB2330] text-xl">
+                                    <div className="w-14 h-14 rounded-2xl bg-[#AB2330]/10 dark:bg-[#C89B3C]/10 dark:text-slate-300 flex items-center justify-center text-[#AB2330] text-xl">
                                         <FaClock />
                                     </div>
 
                                     <div>
 
-                                        <h4 className="font-semibold text-[#0B2E4A]">
+                                        <h4 className="font-semibold text-[#0B2E4A] dark:text-slate-200">
                                             Office Hours
                                         </h4>
 
-                                        <p className="text-slate-600">
+                                        <p className="text-slate-600 dark:text-slate-200">
                                             Monday – Saturday
                                             <br />
                                             9:00 AM – 6:00 PM
@@ -177,7 +177,7 @@ const OfficeMap = () => {
                                 href="https://maps.google.com"
                                 target="_blank"
                                 rel="noreferrer"
-                                className=" mt-10 inline-flex justify-center items-center gap-3 bg-[#AB2330] hover:bg-[#8F1C28] text-white font-semibold rounded-2xl px-7 py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                                className=" mt-10 inline-flex justify-center items-center gap-3 bg-[#AB2330] hover:bg-[#8F1C28] text-white font-semibold rounded-2xl px-7 py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-[#C89B3C] dark:text-[#0B2E4A] dark:bg-[#C89B3C] dark:text-[#0B2E4A] dark:hover:bg-yellow-500">
                                 <FaDirections />
 
                                 Get Directions
