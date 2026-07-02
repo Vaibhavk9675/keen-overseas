@@ -36,8 +36,33 @@ const contactSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: ["New", "Contacted", "Follow Up", "Converted"],
-      default: "New",
+      enum: ["Pending", "Contacted", "Follow Up", "Converted", "Closed"],
+      default: "Pending",
+    },
+
+    assignedTo: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
+    notes: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
+    followUpDate: {
+      type: Date,
+    },
+
+    lastContactedAt: {
+      type: Date,
+    },
+
+    isDeleted: {
+      type: Boolean,
+      default: false,
     },
 
     preferredCountry: {
@@ -56,6 +81,11 @@ const contactSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+contactSchema.index({ createdAt: -1 });
+contactSchema.index({ status: 1 });
+contactSchema.index({ email: 1 });
+contactSchema.index({ phone: 1 });
 
 const Contact = mongoose.model("Contact", contactSchema);
 

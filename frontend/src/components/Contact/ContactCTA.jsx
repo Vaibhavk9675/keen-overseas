@@ -22,7 +22,7 @@ const ContactCTA = () => {
                 <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
 
                     <a
-                        href="https://wa.me/91XXXXXXXXXX"
+                        href="https://wa.me/916395537639"
                         target="_blank"
                         rel="noreferrer"
                         className=" inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" >
@@ -33,7 +33,7 @@ const ContactCTA = () => {
                     </a>
 
                     <a
-                        href="tel:+91XXXXXXXXXX"
+                        href="tel:+916395537639"
                         className="
               inline-flex
               items-center

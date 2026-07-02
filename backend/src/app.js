@@ -3,11 +3,15 @@ import cors from "cors";
 import helmet from "helmet";
 import compression from "compression";
 import rateLimit from "express-rate-limit";
+import adminRoutes from "./routes/adminRoutes.js";
 
 import env from "./config/env.js";
 
 // Routes
 import contactRoutes from "./routes/contactRoutes.js";
+import enquiryRoutes from "./routes/enquiryRoutes.js";
+
+
 
 // Middlewares
 import errorHandler from "./middleware/errorHandler.js";
@@ -59,9 +63,16 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/contact", contactRoutes);
+app.use("/api/admin/enquiries", enquiryRoutes);
 
 /* -------------------------- Error Handler --------------------------- */
 
+app.use("/api/contact", contactRoutes);
+
+app.use("/api/admin", adminRoutes);
+app.use("/api/admin/enquiries", enquiryRoutes);
+
 app.use(errorHandler);
+
 
 export default app;
